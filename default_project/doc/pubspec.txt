@@ -18,7 +18,14 @@ dependencies:
     path: 'C:\Users\ridjanod.FSA-RIDJANOD-2\dart\model\dartling'
   dartling_default_app:
     path: 'C:\Users\ridjanod.FSA-RIDJANOD-2\dart\model\dartling_default_app'
-      
+ 
+dependencies:
+  browser: '>=0.9.0 <0.10.0'
+  dartling:
+    git: 'https://github.com/dzenanr/dartling.git'
+  dartling_default_app:
+    git: 'https://github.com/dzenanr/dartling_default_app.git' 
+     
 dependencies:
   browser: '>=0.9.0 <0.10.0'
   dartling:
@@ -27,4 +34,5 @@ dependencies:
   dartling_default_app:
     git: 'https://github.com/dzenanr/dartling_default_app.git'
     version: '>=1.0.5 <2.0.0'
-    
+  
+
