@@ -1,0 +1,14 @@
+name: category_keyword
+author: Your Name
+homepage: http://ondart.me/
+version: 0.0.1
+description: category_keyword application that uses dartling for its model.
+environment:
+  sdk: '>=0.8.10+8 <2.0.0'
+dependencies:
+  browser: '>=0.9.0 <0.10.0'
+  dartling:
+    path: 'C:\Users\ridjanod.FSA-RIDJANOD-2\dart\model\dartling'
+  dartling_default_app:
+    path: 'C:\Users\ridjanod.FSA-RIDJANOD-2\dart\model\dartling_default_app'
+  
