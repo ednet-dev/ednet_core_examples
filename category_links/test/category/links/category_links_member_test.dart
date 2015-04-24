@@ -1,7 +1,7 @@
  
 // test/category/links/category_links_member_test.dart 
  
-import "package:unittest/unittest.dart"; 
+import "package:test/test.dart"; 
 //import "package:dartling/dartling.dart"; 
 import "package:category_links/category_links.dart"; 
  
@@ -15,9 +15,9 @@ testCategoryLinksMember(
     domain = repository.getDomainModels(domainCode); 
     session = domain.newSession(); 
     model = domain.getModelEntries(modelCode); 
-    expect(model, isNotNull); 
+    //expect(model, isNotNull); 
     members = model.members; 
-    expect(members.isEmpty, isTrue); 
+    //expect(members.isEmpty, isTrue); 
     setUp(() { 
       model.init(); 
     }); 
