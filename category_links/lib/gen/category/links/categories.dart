@@ -4,7 +4,8 @@ part of category_links;
  
 abstract class CategoryGen extends ConceptEntity<Category> { 
  
-  CategoryGen(Concept concept) : super.of(concept) { 
+  CategoryGen(Concept concept) { 
+    this.concept = concept;
     Concept webLinkConcept = concept.model.concepts.singleWhereCode("WebLink"); 
     setChild("webLinks", new WebLinks(webLinkConcept)); 
     Concept interestConcept = concept.model.concepts.singleWhereCode("Interest"); 
@@ -13,7 +14,8 @@ abstract class CategoryGen extends ConceptEntity<Category> {
     setChild("questions", new Questions(questionConcept)); 
   } 
  
-  CategoryGen.withId(Concept concept, String name) : super.of(concept) { 
+  CategoryGen.withId(Concept concept, String name) {
+    this.concept = concept;
     setAttribute("name", name); 
     Concept webLinkConcept = concept.model.concepts.singleWhereCode("WebLink"); 
     setChild("webLinks", new WebLinks(webLinkConcept)); 
@@ -49,7 +51,9 @@ abstract class CategoryGen extends ConceptEntity<Category> {
  
 abstract class CategoriesGen extends Entities<Category> { 
  
-  CategoriesGen(Concept concept) : super.of(concept); 
+  CategoriesGen(Concept concept) {
+    this.concept = concept;
+  }
  
   Categories newEntities() => new Categories(concept); 
   Category newEntity() => new Category(concept); 

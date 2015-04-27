@@ -4,12 +4,14 @@ part of category_links;
  
 abstract class MemberGen extends ConceptEntity<Member> { 
  
-  MemberGen(Concept concept) : super.of(concept) { 
+  MemberGen(Concept concept) { 
+    this.concept = concept;
     Concept interestConcept = concept.model.concepts.singleWhereCode("Interest"); 
     setChild("interests", new Interests(interestConcept)); 
   } 
  
-  MemberGen.withId(Concept concept, String email) : super.of(concept) { 
+  MemberGen.withId(Concept concept, String email) { 
+    this.concept = concept;
     setAttribute("email", email); 
     Concept interestConcept = concept.model.concepts.singleWhereCode("Interest"); 
     setChild("interests", new Interests(interestConcept)); 
@@ -55,7 +57,9 @@ abstract class MemberGen extends ConceptEntity<Member> {
  
 abstract class MembersGen extends Entities<Member> { 
  
-  MembersGen(Concept concept) : super.of(concept); 
+  MembersGen(Concept concept) {
+    this.concept = concept;
+  }
  
   Members newEntities() => new Members(concept); 
   Member newEntity() => new Member(concept); 

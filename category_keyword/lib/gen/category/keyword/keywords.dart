@@ -4,12 +4,14 @@ part of category_keyword;
  
 abstract class KeywordGen extends ConceptEntity<Keyword> { 
  
-  KeywordGen(Concept concept) : super.of(concept) { 
+  KeywordGen(Concept concept) { 
+    this.concept = concept;
     Concept tagConcept = concept.model.concepts.singleWhereCode("Tag"); 
     setChild("tags", new Tags(tagConcept)); 
   } 
  
-  KeywordGen.withId(Concept concept, String word) : super.of(concept) { 
+  KeywordGen.withId(Concept concept, String word) { 
+    this.concept = concept;
     setAttribute("word", word); 
     Concept tagConcept = concept.model.concepts.singleWhereCode("Tag"); 
     setChild("tags", new Tags(tagConcept)); 
@@ -31,7 +33,9 @@ abstract class KeywordGen extends ConceptEntity<Keyword> {
  
 abstract class KeywordsGen extends Entities<Keyword> { 
  
-  KeywordsGen(Concept concept) : super.of(concept); 
+  KeywordsGen(Concept concept) {
+    this.concept = concept;
+  }
  
   Keywords newEntities() => new Keywords(concept); 
   Keyword newEntity() => new Keyword(concept); 

@@ -4,9 +4,12 @@ part of category_links;
  
 abstract class InterestGen extends ConceptEntity<Interest> { 
  
-  InterestGen(Concept concept) : super.of(concept); 
+  InterestGen(Concept concept) {
+    this.concept = concept;
+  }
  
-  InterestGen.withId(Concept concept, Category category, Member member) : super.of(concept) { 
+  InterestGen.withId(Concept concept, Category category, Member member) { 
+    this.concept = concept;
     setParent("category", category); 
     setParent("member", member); 
   } 
@@ -33,7 +36,9 @@ abstract class InterestGen extends ConceptEntity<Interest> {
  
 abstract class InterestsGen extends Entities<Interest> { 
  
-  InterestsGen(Concept concept) : super.of(concept); 
+  InterestsGen(Concept concept) {
+    this.concept = concept;
+  }
  
   Interests newEntities() => new Interests(concept); 
   Interest newEntity() => new Interest(concept); 

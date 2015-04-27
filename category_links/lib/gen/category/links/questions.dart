@@ -4,9 +4,12 @@ part of category_links;
  
 abstract class QuestionGen extends ConceptEntity<Question> { 
  
-  QuestionGen(Concept concept) : super.of(concept); 
+  QuestionGen(Concept concept) {
+    this.concept = concept;
+  }
  
-  QuestionGen.withId(Concept concept, int number) : super.of(concept) { 
+  QuestionGen.withId(Concept concept, int number) {
+    this.concept = concept;
     setAttribute("number", number); 
   } 
  
@@ -45,7 +48,9 @@ abstract class QuestionGen extends ConceptEntity<Question> {
  
 abstract class QuestionsGen extends Entities<Question> { 
  
-  QuestionsGen(Concept concept) : super.of(concept); 
+  QuestionsGen(Concept concept) {
+    this.concept = concept;
+  }
  
   Questions newEntities() => new Questions(concept); 
   Question newEntity() => new Question(concept); 

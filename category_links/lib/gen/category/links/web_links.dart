@@ -4,9 +4,12 @@ part of category_links;
  
 abstract class WebLinkGen extends ConceptEntity<WebLink> { 
  
-  WebLinkGen(Concept concept) : super.of(concept); 
+  WebLinkGen(Concept concept) {
+    this.concept = concept;
+  }
  
-  WebLinkGen.withId(Concept concept, Category category, String subject) : super.of(concept) { 
+  WebLinkGen.withId(Concept concept, Category category, String subject) {
+    this.concept = concept;
     setParent("category", category); 
     setAttribute("subject", subject); 
   } 
@@ -46,7 +49,9 @@ abstract class WebLinkGen extends ConceptEntity<WebLink> {
  
 abstract class WebLinksGen extends Entities<WebLink> { 
  
-  WebLinksGen(Concept concept) : super.of(concept); 
+  WebLinksGen(Concept concept) {
+    this.concept = concept;
+  }
  
   WebLinks newEntities() => new WebLinks(concept); 
   WebLink newEntity() => new WebLink(concept); 

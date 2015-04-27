@@ -4,9 +4,12 @@ part of category_keyword;
  
 abstract class TagGen extends ConceptEntity<Tag> { 
  
-  TagGen(Concept concept) : super.of(concept); 
+  TagGen(Concept concept) {
+    this.concept = concept;
+  }
  
-  TagGen.withId(Concept concept, Keyword keyword, Category category) : super.of(concept) { 
+  TagGen.withId(Concept concept, Keyword keyword, Category category) {
+    this.concept = concept;
     setParent("keyword", keyword); 
     setParent("category", category); 
   } 
@@ -30,7 +33,9 @@ abstract class TagGen extends ConceptEntity<Tag> {
  
 abstract class TagsGen extends Entities<Tag> { 
  
-  TagsGen(Concept concept) : super.of(concept); 
+  TagsGen(Concept concept) {
+    this.concept = concept;
+  }
  
   Tags newEntities() => new Tags(concept); 
   Tag newEntity() => new Tag(concept); 

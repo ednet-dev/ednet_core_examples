@@ -105,7 +105,7 @@ testCategoryKeywordCategory(
  
       //categories.display(title: "Sort categories"); 
     });
- 
+
     test("Order categories", () { 
       var orderedCategories = categories.order(); 
       expect(orderedCategories.isEmpty, isFalse); 
@@ -116,8 +116,8 @@ testCategoryKeywordCategory(
  
       //orderedCategories.display(title: "Order categories"); 
     }); 
-     */
- 
+     */ 
+
     test("Copy categories", () { 
       var copiedCategories = categories.copy(); 
       expect(copiedCategories.isEmpty, isFalse); 
