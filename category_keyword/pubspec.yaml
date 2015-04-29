@@ -1,14 +1,12 @@
 name: category_keyword
-version: 0.0.3
+version: 2.0.1
 description: category_keyword application that uses dartling for its model.
-author: Your Name
+author: Dzenan Ridjanovic
 homepage: http://ondart.me/
 environment:
   sdk: '>=1.9.3 <2.0.0'
 dependencies:
   browser: any
-  dartling:
-    git: git://github.com/dzenanr/dartling.git
-  dartling_default_app:
-    git: git://github.com/dzenanr/dartling_default_app.git
+  dartling: any
+  dartling_default_app: any
   
