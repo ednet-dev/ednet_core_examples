@@ -2,7 +2,7 @@ part of category_links;
  
 // lib/gen/category/links/comments.dart 
  
-abstract class CommentGen extends ConceptEntity<Comment> { 
+abstract class CommentGen extends Entity<Comment> { 
  
   CommentGen(Concept concept) {
     this.concept = concept;

@@ -2,7 +2,7 @@ part of category_links;
  
 // lib/gen/category/links/web_links.dart 
  
-abstract class WebLinkGen extends ConceptEntity<WebLink> { 
+abstract class WebLinkGen extends Entity<WebLink> { 
  
   WebLinkGen(Concept concept) {
     this.concept = concept;

@@ -2,7 +2,7 @@ part of category_keyword;
  
 // lib/gen/category/keyword/categories.dart 
  
-abstract class CategoryGen extends ConceptEntity<Category> { 
+abstract class CategoryGen extends Entity<Category> { 
  
   CategoryGen(Concept concept) { 
     this.concept = concept;

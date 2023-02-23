@@ -25,7 +25,7 @@ class ProjectEntries extends ModelEntries {
     return null; 
   } 
  
-  ConceptEntity newEntity(String conceptCode) { 
+  Entity newEntity(String conceptCode) { 
     var concept = model.concepts.singleWhereCode(conceptCode); 
     if (concept == null) { 
       throw new ConceptError("${conceptCode} concept does not exist.") ; 

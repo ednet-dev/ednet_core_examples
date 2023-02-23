@@ -2,7 +2,7 @@ part of default_project;
  
 // lib/gen/default/project/projects.dart 
  
-abstract class ProjectGen extends ConceptEntity<Project> { 
+abstract class ProjectGen extends Entity<Project> { 
  
   ProjectGen(Concept concept) {
     this.concept = concept;

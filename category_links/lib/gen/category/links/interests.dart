@@ -2,7 +2,7 @@ part of category_links;
  
 // lib/gen/category/links/interests.dart 
  
-abstract class InterestGen extends ConceptEntity<Interest> { 
+abstract class InterestGen extends Entity<Interest> { 
  
   InterestGen(Concept concept) {
     this.concept = concept;
