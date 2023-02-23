@@ -528,7 +528,7 @@ testCategoryQuestionLink(Repo repo, String domainCode, String modelCode) {
       var comment = new Comment(commentConcept);
       expect(comment, isNotNull);
       comment.text =
-          'Dartling is in pre-beta version now.';
+          'EDNetCore is in pre-beta version now.';
       Comments comments = entries.comments;
       comments.add(comment);
       expect(comments.errors.length, equals(0));
@@ -546,7 +546,7 @@ testCategoryQuestionLink(Repo repo, String domainCode, String modelCode) {
       var question = new Question(questionConcept);
       expect(question, isNotNull);
       question.text =
-          'Is Dartling a main memory based model framework?';
+          'Is EDNetCore a main memory based model framework?';
       questions.add(question);
       expect(questions.errors.length, equals(0));
       expect(questions.length, equals(1));
@@ -580,7 +580,7 @@ testCategoryQuestionLink(Repo repo, String domainCode, String modelCode) {
       var question = new Question(questionConcept);
       expect(question, isNotNull);
       question.text =
-          'Is Dartling a main memory based model framework?';
+          'Is EDNetCore a main memory based model framework?';
       questions.add(question);
       expect(questions.errors.length, equals(0));
       expect(questions.length, equals(1));

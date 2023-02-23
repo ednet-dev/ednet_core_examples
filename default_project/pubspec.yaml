@@ -9,5 +9,5 @@ environment:
 dependencies:
   browser: any
   dartling: any
-  dartling_default_app: any
+  ednet_core_default_app: any
   

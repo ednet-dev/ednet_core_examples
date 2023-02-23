@@ -9,34 +9,34 @@ dependencies:
   browser: any
   dartling:
     git: git://github.com/dzenanr/dartling.git
-  dartling_default_app:
-    git: git://github.com/dzenanr/dartling_default_app.git
+  ednet_core_default_app:
+    git: git://github.com/dzenanr/ednet_core_default_app.git
     
 ?
 dependencies:
   browser: '>=0.10.0 <0.11.0'
   dartling:
-    git: 'https://github.com/dzenanr/dartling.git'
-  dartling_default_app:
-    git: 'https://github.com/dzenanr/dartling_default_app.git'
+    git: 'https://github.com/ednet-dev/ednet_core.git'
+  ednet_core_default_app:
+    git: 'https://github.com/dzenanr/ednet_core_default_app.git'
 ?
 
 dependencies:
   browser: '>=0.10.0 <0.11.0'
   dartling: '>=2.0.1 <3.0.0'
-  dartling_default_app: '>=2.0.1 <3.0.0'
+  ednet_core_default_app: '>=2.0.1 <3.0.0'
 
 dependencies:
   browser: '>=0.10.0 <0.11.0'
   dartling:
     path: 'C:\Users\ridjanod.FSA-RIDJANOD-2\dart\model\dartling'
-  dartling_default_app:
-    path: 'C:\Users\ridjanod.FSA-RIDJANOD-2\dart\model\dartling_default_app'
+  ednet_core_default_app:
+    path: 'C:\Users\ridjanod.FSA-RIDJANOD-2\dart\model\ednet_core_default_app'
     
 dependencies:
   browser: any
   dartling: any
-  dartling_default_app: any
+  ednet_core_default_app: any
   
 
      

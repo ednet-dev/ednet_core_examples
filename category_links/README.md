@@ -4,4 +4,4 @@
 
 ## Description: 
 category_links project uses 
-[dartling] (https://github.com/dzenanr/dartling) for the model.
+[EDNetCore] (https://github.com/ednet-dev/ednet_core) for the model.

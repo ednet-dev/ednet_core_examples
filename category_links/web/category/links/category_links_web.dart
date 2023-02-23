@@ -3,7 +3,7 @@
  
 import "dart:html"; 
  
-import "package:dartling_default_app/dartling_default_app.dart"; 
+import "package:ednet_core_default_app/ednet_core_default_app.dart"; 
 import "package:category_links/category_links.dart"; 
  
 initData(Repository repository) { 

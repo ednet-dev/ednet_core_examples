@@ -167,7 +167,7 @@ testDefaultProjectProject(
 
       var projectConcept = projects.concept;
       var programmingProject = new Project(projectConcept);
-      programmingProject.name = 'dartling Testing';
+      programmingProject.name = 'ednet_core Testing';
       programmingProject.description = 'Programming unit tests.';
       var added = programmingProjects.add(programmingProject);
       expect(added, isTrue);     
@@ -211,9 +211,9 @@ testDefaultProjectProject(
     test('New project with id', () {
       var projectCount = projects.length;
       var projectConcept = projects.concept;
-      var marketing = new Project.withId(projectConcept, 'dartling Marketing');
+      var marketing = new Project.withId(projectConcept, 'ednet_core Marketing');
       expect(marketing, isNotNull);
-      marketing.description = 'Making dartling known to the Dart community.';
+      marketing.description = 'Making ednet_core known to the Dart community.';
       var added = projects.add(marketing);
       expect(added, isTrue);
       expect(projects.length, equals(++projectCount));
@@ -224,15 +224,15 @@ testDefaultProjectProject(
     test('Update project id with try', () {
       var projectCount = projects.length;
       var projectConcept = projects.concept;
-      var marketing = new Project.withId(projectConcept, 'dartling Marketing');
+      var marketing = new Project.withId(projectConcept, 'ednet_core Marketing');
       expect(marketing, isNotNull);
-      marketing.description = 'Making dartling known to the Dart community.';
+      marketing.description = 'Making ednet_core known to the Dart community.';
       projects.add(marketing);
       expect(projects.length, equals(++projectCount));
 
       var beforeNameUpdate = marketing.name;
       try {
-        marketing.name = 'Marketing dartling';
+        marketing.name = 'Marketing ednet_core';
       } on UpdateError catch (e) {
         expect(marketing.name, equals(beforeNameUpdate));
       }
@@ -241,23 +241,23 @@ testDefaultProjectProject(
     test('Update project id without try', () {
       var projectCount = projects.length;
       var projectConcept = projects.concept;
-      var marketing = new Project.withId(projectConcept, 'dartling Marketing');
+      var marketing = new Project.withId(projectConcept, 'ednet_core Marketing');
       expect(marketing, isNotNull);
-      marketing.description = 'Making dartling known to the Dart community.';
+      marketing.description = 'Making ednet_core known to the Dart community.';
       projects.add(marketing);
       expect(projects.length, equals(++projectCount));
 
       var beforeNameUpdate = marketing.name;
-      expect(() => marketing.name = 'Marketing dartling', throws);
+      expect(() => marketing.name = 'Marketing ednet_core', throws);
       expect(marketing.name, equals(beforeNameUpdate));
     });
     
     test('Update project id with success', () {
       var projectCount = projects.length;
       var projectConcept = projects.concept;
-      var marketing = new Project.withId(projectConcept, 'dartling Marketing');
+      var marketing = new Project.withId(projectConcept, 'ednet_core Marketing');
       expect(marketing, isNotNull);
-      marketing.description = 'Making dartling known to the Dart community.';
+      marketing.description = 'Making ednet_core known to the Dart community.';
       projects.add(marketing);
       expect(projects.length, equals(++projectCount));
 
@@ -267,7 +267,7 @@ testDefaultProjectProject(
       var nameAttribute = marketing.concept.attributes.singleWhereCode('name');
       expect(nameAttribute.update, isFalse);
       nameAttribute.update = true;
-      var newName = 'Marketing dartling';
+      var newName = 'Marketing ednet_core';
       afterUpdateMarketing.name = newName;
       expect(afterUpdateMarketing.name, equals(newName));
       nameAttribute.update = false;
@@ -284,15 +284,15 @@ testDefaultProjectProject(
     test('Update project description with failure', () {
       var projectCount = projects.length;
       var projectConcept = projects.concept;
-      var marketing = new Project.withId(projectConcept, 'dartling Marketing');
+      var marketing = new Project.withId(projectConcept, 'ednet_core Marketing');
       expect(marketing, isNotNull);
-      marketing.description = 'Making dartling known to the Dart community.';
+      marketing.description = 'Making ednet_core known to the Dart community.';
       projects.add(marketing);
       expect(projects.length, equals(++projectCount));
 
       var beforeDescriptionUpdate = marketing.description;
       var afterUpdateMarketing = marketing.copy();
-      var newDescription = 'Writing papers about dartling';
+      var newDescription = 'Writing papers about ednet_core';
       afterUpdateMarketing.description = newDescription;
       expect(afterUpdateMarketing.description, equals(newDescription));
       // Projects.update can only be used if oid, code or id set.
@@ -302,9 +302,9 @@ testDefaultProjectProject(
     test('Copy Equality', () {
       var projectCount = projects.length;
       var projectConcept = projects.concept;
-      var marketing = new Project.withId(projectConcept, 'dartling Marketing');
+      var marketing = new Project.withId(projectConcept, 'ednet_core Marketing');
       expect(marketing, isNotNull);
-      marketing.description = 'Making dartling known to the Dart community.';
+      marketing.description = 'Making ednet_core known to the Dart community.';
       projects.add(marketing);
       expect(projects.length, equals(++projectCount));
 
@@ -337,9 +337,9 @@ testDefaultProjectProject(
     test('New project undo and redo', () {
       var projectCount = projects.length;
       var projectConcept = projects.concept;
-      var marketing = new Project.withId(projectConcept, 'dartling Marketing');
+      var marketing = new Project.withId(projectConcept, 'ednet_core Marketing');
       expect(marketing, isNotNull);
-      marketing.description = 'Making dartling known to the Dart community.';
+      marketing.description = 'Making ednet_core known to the Dart community.';
 
       var action = new AddAction(session, projects, marketing);
       action.doit();
@@ -355,9 +355,9 @@ testDefaultProjectProject(
     test('New project undo and redo with session', () {
       var projectCount = projects.length;
       var projectConcept = projects.concept;
-      var marketing = new Project.withId(projectConcept, 'dartling Marketing');
+      var marketing = new Project.withId(projectConcept, 'ednet_core Marketing');
       expect(marketing, isNotNull);
-      marketing.description = 'Making dartling known to the Dart community.';
+      marketing.description = 'Making ednet_core known to the Dart community.';
 
       var action = new AddAction(session, projects, marketing);
       action.doit();
@@ -491,7 +491,7 @@ testDefaultProjectProject(
 
       domain.startActionReaction(reaction);
       var project = new Project(projectConcept);
-      project.name = 'dartling Documentation';
+      project.name = 'ednet_core Documentation';
 
       var session = domain.newSession();
       var addAction = new AddAction(session, projects, project);
@@ -499,7 +499,7 @@ testDefaultProjectProject(
       expect(projects.length, equals(++projectCount));
       expect(reaction.reactedOnAdd, isTrue);
 
-      var description = 'Documenting dartling.';
+      var description = 'Documenting ednet_core.';
       var setAttributeAction =
           new SetAttributeAction(session, project, 'description', description);
       setAttributeAction.doit();
