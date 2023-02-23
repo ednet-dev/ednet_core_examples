@@ -1,6 +1,6 @@
 # category_keyword 
 
-**Categories**: dartling, class models. 
+**Categories**: EDNetCore, class models. 
 
 ## Description: 
 category_keyword project uses 

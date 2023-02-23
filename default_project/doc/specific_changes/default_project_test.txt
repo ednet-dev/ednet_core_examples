@@ -1,5 +1,5 @@
 
-import 'package:dartling/dartling.dart';
+import 'package:ednet_core/ednet_core.dart';
 import 'package:unittest/unittest.dart';
 
 import 'package:default_project/default_project.dart';
@@ -23,15 +23,15 @@ testDefaultProject(Repo repo, String domainCode, String modelCode) {
 
       var design = new Project(projectConcept);
       expect(design, isNotNull);
-      design.name = 'dartling Design';
+      design.name = 'EDNetCore Design';
       design.description =
-          'Creating a model of dartling concepts based on MagicBoxes.';
+          'Creating a model of EDNetCore concepts based on MagicBoxes.';
       projects.add(design);
       expect(projects.length, equals(++projectCount));
 
       var prototype = new Project(projectConcept);
       expect(prototype, isNotNull);
-      prototype.name = 'dartling Prototype';
+      prototype.name = 'EDNetCore Prototype';
       prototype.description =
           'Programming the meta model and the generic model.';
       projects.add(prototype);
@@ -39,9 +39,9 @@ testDefaultProject(Repo repo, String domainCode, String modelCode) {
 
       var production = new Project(projectConcept);
       expect(production, isNotNull);
-      production.name = 'dartling';
+      production.name = 'EDNetCore';
       production.description =
-          'Programming dartling.';
+          'Programming EDNetCore.';
       projects.add(production);
       expect(projects.length, equals(++projectCount));
     });
@@ -91,7 +91,7 @@ testDefaultProject(Repo repo, String domainCode, String modelCode) {
       var projectCount = projects.length;
       var project = new Project(projectConcept);
       expect(project, isNotNull);
-      project.name = 'dartling';
+      project.name = 'EDNetCore';
       var added = projects.add(project);
       expect(added, isFalse);
       expect(projects.length, equals(projectCount));
@@ -132,14 +132,14 @@ testDefaultProject(Repo repo, String domainCode, String modelCode) {
       var dartlingOid = new Oid.ts(1372007017765);
       var project = projects.singleWhereOid(dartlingOid);
       expect(project, isNotNull);
-      expect(project.name, equals('dartling'));
+      expect(project.name, equals('EDNetCore'));
     });
     test('Find Project by Id', () {
       var projects = entries.projects;
       var projectConcept = projects.concept;
       Id id = new Id(projectConcept);
       expect(id.length, equals(1));
-      var searchName = 'dartling';
+      var searchName = 'EDNetCore';
       id.setAttribute('name', searchName);
       var project = projects.singleWhereId(id);
       expect(project, isNotNull);
@@ -147,14 +147,14 @@ testDefaultProject(Repo repo, String domainCode, String modelCode) {
     });
     test('Find Project by Attribute Id', () {
       var projects = entries.projects;
-      var searchName = 'dartling';
+      var searchName = 'EDNetCore';
       var project = projects.singleWhereAttributeId('name', searchName);
       expect(project, isNotNull);
       expect(project.name, equals(searchName));
     });
     test('Find Project by Name Id', () {
       var projects = entries.projects;
-      var searchName = 'dartling';
+      var searchName = 'EDNetCore';
       var project = projects.findByNameId(searchName);
       expect(project, isNotNull);
       expect(project.name, equals(searchName));
@@ -175,7 +175,7 @@ testDefaultProject(Repo repo, String domainCode, String modelCode) {
 
       var projectConcept = projects.concept;
       var programmingProject = new Project(projectConcept);
-      programmingProject.name = 'dartling Testing';
+      programmingProject.name = 'EDNetCore Testing';
       programmingProject.description = 'Programming unit tests.';
       var added = programmingProjects.add(programmingProject);
       expect(added, isTrue);
@@ -193,7 +193,7 @@ testDefaultProject(Repo repo, String domainCode, String modelCode) {
       expect(programmingProjects.isEmpty, isFalse);
       expect(programmingProjects.source.isEmpty, isFalse);
 
-      var searchName = 'dartling';
+      var searchName = 'EDNetCore';
       var project = programmingProjects.findByNameId(searchName);
       expect(project, isNotNull);
       expect(project.name, equals(searchName));
@@ -216,9 +216,9 @@ testDefaultProject(Repo repo, String domainCode, String modelCode) {
       var projects = entries.projects;
       var projectCount = projects.length;
       var projectConcept = projects.concept;
-      var marketing = new Project.withId(projectConcept, 'dartling Marketing');
+      var marketing = new Project.withId(projectConcept, 'EDNetCore Marketing');
       expect(marketing, isNotNull);
-      marketing.description = 'Making dartling known to the Dart community.';
+      marketing.description = 'Making EDNetCore known to the Dart community.';
       var added = projects.add(marketing);
       expect(added, isTrue);
       expect(projects.length, equals(++projectCount));
@@ -247,15 +247,15 @@ testDefaultProject(Repo repo, String domainCode, String modelCode) {
       var projects = entries.projects;
       var projectCount = projects.length;
       var projectConcept = projects.concept;
-      var marketing = new Project.withId(projectConcept, 'dartling Marketing');
+      var marketing = new Project.withId(projectConcept, 'EDNetCore Marketing');
       expect(marketing, isNotNull);
-      marketing.description = 'Making dartling known to the Dart community.';
+      marketing.description = 'Making EDNetCore known to the Dart community.';
       projects.add(marketing);
       expect(projects.length, equals(++projectCount));
 
       var beforeNameUpdate = marketing.name;
       try {
-        marketing.name = 'Marketing dartling';
+        marketing.name = 'Marketing EDNetCore';
       } on UpdateError catch (e) {
         expect(marketing.name, equals(beforeNameUpdate));
       }
@@ -264,23 +264,23 @@ testDefaultProject(Repo repo, String domainCode, String modelCode) {
       var projects = entries.projects;
       var projectCount = projects.length;
       var projectConcept = projects.concept;
-      var marketing = new Project.withId(projectConcept, 'dartling Marketing');
+      var marketing = new Project.withId(projectConcept, 'EDNetCore Marketing');
       expect(marketing, isNotNull);
-      marketing.description = 'Making dartling known to the Dart community.';
+      marketing.description = 'Making EDNetCore known to the Dart community.';
       projects.add(marketing);
       expect(projects.length, equals(++projectCount));
 
       var beforeNameUpdate = marketing.name;
-      expect(() => marketing.name = 'Marketing dartling', throws);
+      expect(() => marketing.name = 'Marketing EDNetCore', throws);
       expect(marketing.name, equals(beforeNameUpdate));
     });
     test('Update New Project Id with Success', () {
       var projects = entries.projects;
       var projectCount = projects.length;
       var projectConcept = projects.concept;
-      var marketing = new Project.withId(projectConcept, 'dartling Marketing');
+      var marketing = new Project.withId(projectConcept, 'EDNetCore Marketing');
       expect(marketing, isNotNull);
-      marketing.description = 'Making dartling known to the Dart community.';
+      marketing.description = 'Making EDNetCore known to the Dart community.';
       projects.add(marketing);
       expect(projects.length, equals(++projectCount));
 
@@ -290,7 +290,7 @@ testDefaultProject(Repo repo, String domainCode, String modelCode) {
       var nameAttribute = marketing.concept.attributes.singleWhereCode('name');
       expect(nameAttribute.update, isFalse);
       nameAttribute.update = true;
-      var newName = 'Marketing dartling';
+      var newName = 'Marketing EDNetCore';
       afterUpdateMarketing.name = newName;
       expect(afterUpdateMarketing.name, equals(newName));
       nameAttribute.update = false;
@@ -307,15 +307,15 @@ testDefaultProject(Repo repo, String domainCode, String modelCode) {
       var projects = entries.projects;
       var projectCount = projects.length;
       var projectConcept = projects.concept;
-      var marketing = new Project.withId(projectConcept, 'dartling Marketing');
+      var marketing = new Project.withId(projectConcept, 'EDNetCore Marketing');
       expect(marketing, isNotNull);
-      marketing.description = 'Making dartling known to the Dart community.';
+      marketing.description = 'Making EDNetCore known to the Dart community.';
       projects.add(marketing);
       expect(projects.length, equals(++projectCount));
 
       var beforeDescriptionUpdate = marketing.description;
       var afterUpdateMarketing = marketing.copy();
-      var newDescription = 'Writing papers about dartling';
+      var newDescription = 'Writing papers about EDNetCore';
       afterUpdateMarketing.description = newDescription;
       expect(afterUpdateMarketing.description, equals(newDescription));
       // Projects.update can only be used if oid, code or id set.
@@ -325,9 +325,9 @@ testDefaultProject(Repo repo, String domainCode, String modelCode) {
       var projects = entries.projects;
       var projectCount = projects.length;
       var projectConcept = projects.concept;
-      var marketing = new Project.withId(projectConcept, 'dartling Marketing');
+      var marketing = new Project.withId(projectConcept, 'EDNetCore Marketing');
       expect(marketing, isNotNull);
-      marketing.description = 'Making dartling known to the Dart community.';
+      marketing.description = 'Making EDNetCore known to the Dart community.';
       projects.add(marketing);
       expect(projects.length, equals(++projectCount));
 
@@ -360,9 +360,9 @@ testDefaultProject(Repo repo, String domainCode, String modelCode) {
       var projects = entries.projects;
       var projectCount = projects.length;
       var projectConcept = projects.concept;
-      var marketing = new Project.withId(projectConcept, 'dartling Marketing');
+      var marketing = new Project.withId(projectConcept, 'EDNetCore Marketing');
       expect(marketing, isNotNull);
-      marketing.description = 'Making dartling known to the Dart community.';
+      marketing.description = 'Making EDNetCore known to the Dart community.';
 
       var session = models.newSession();
       var action = new AddAction(session, projects, marketing);
@@ -379,9 +379,9 @@ testDefaultProject(Repo repo, String domainCode, String modelCode) {
       var projects = entries.projects;
       var projectCount = projects.length;
       var projectConcept = projects.concept;
-      var marketing = new Project.withId(projectConcept, 'dartling Marketing');
+      var marketing = new Project.withId(projectConcept, 'EDNetCore Marketing');
       expect(marketing, isNotNull);
-      marketing.description = 'Making dartling known to the Dart community.';
+      marketing.description = 'Making EDNetCore known to the Dart community.';
 
       var session = models.newSession();
       var action = new AddAction(session, projects, marketing);
@@ -396,7 +396,7 @@ testDefaultProject(Repo repo, String domainCode, String modelCode) {
     });
     test('Undo and Redo Update Project', () {
       var projects = entries.projects;
-      var searchName = 'dartling';
+      var searchName = 'EDNetCore';
       var project = projects.singleWhereAttributeId('name', searchName);
       expect(project, isNotNull);
       expect(project.name, equals(searchName));
@@ -524,7 +524,7 @@ testDefaultProject(Repo repo, String domainCode, String modelCode) {
 
       models.startActionReaction(reaction);
       var project = new Project(projectConcept);
-      project.name = 'dartling Documentation';
+      project.name = 'EDNetCore Documentation';
 
       var session = models.newSession();
       var addAction = new AddAction(session, projects, project);
@@ -532,7 +532,7 @@ testDefaultProject(Repo repo, String domainCode, String modelCode) {
       expect(projects.length, equals(++projectCount));
       expect(reaction.reactedOnAdd, isTrue);
 
-      var description = 'Documenting dartling.';
+      var description = 'Documenting EDNetCore.';
       var setAttributeAction =
           new SetAttributeAction(session, project, 'description', description);
       setAttributeAction.doit();

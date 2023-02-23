@@ -29,7 +29,7 @@ Create a New Repo at GitHub
 (without README, since cloning will not be used).
 Repository Name: dartling_examples
 Description: 
-  The dartling_examples project is just a collection of separate dartling examples.
+  The dartling_examples project is just a collection of separate EDNetCore examples.
       
 Next steps:
   cd git/dart/dartling_examples

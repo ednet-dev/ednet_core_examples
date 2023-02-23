@@ -1,12 +1,12 @@
 name: category_keyword
 version: 2.0.1
-description: category_keyword application that uses dartling for its model.
+description: category_keyword application that uses EDNetCore for its model.
 author: Dzenan Ridjanovic
 homepage: http://ondart.me/
 environment:
   sdk: '>=1.9.3 <2.0.0'
 dependencies:
   browser: any
-  dartling: any
+  ednet_core: any
   ednet_core_default_app: any
   

@@ -1,6 +1,6 @@
 # default_project 
 
-**Categories**: dartling, class models. 
+**Categories**: EDNetCore, class models. 
 
 ## Description: 
 default_project project uses 

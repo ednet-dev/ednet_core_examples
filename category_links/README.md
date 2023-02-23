@@ -1,6 +1,6 @@
 # category_links 
 
-**Categories**: dartling, class models. 
+**Categories**: EDNetCore, class models. 
 
 ## Description: 
 category_links project uses 
