@@ -2,7 +2,7 @@
 // test/default/project/default_project_project_test.dart 
  
 import "package:test/test.dart"; 
-//import "package:dartling/dartling.dart"; 
+//import "package:ednet_core/ednet_core.dart"; 
 import "package:default_project/default_project.dart"; 
  
 testDefaultProjectProject( 

@@ -2,7 +2,7 @@
 // test/category/keyword/category_keyword_category_test.dart 
  
 import "package:test/test.dart"; 
-//import "package:dartling/dartling.dart"; 
+//import "package:ednet_core/ednet_core.dart"; 
 import "package:category_keyword/category_keyword.dart"; 
  
 testCategoryKeywordCategory( 

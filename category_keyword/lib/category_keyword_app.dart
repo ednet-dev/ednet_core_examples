@@ -40,7 +40,7 @@ library category_keyword_app;
 import "dart:html"; 
 import "dart:math"; 
  
-import "package:dartling/dartling.dart"; 
+import "package:ednet_core/ednet_core.dart"; 
 import "package:dartling_default_app/dartling_default_app.dart"; 
  
 import "package:category_keyword/category_keyword.dart"; 

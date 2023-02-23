@@ -40,7 +40,7 @@ library default_project_app;
 import "dart:html"; 
 import "dart:math"; 
  
-import "package:dartling/dartling.dart"; 
+import "package:ednet_core/ednet_core.dart"; 
 import "package:dartling_default_app/dartling_default_app.dart"; 
  
 import "package:default_project/default_project.dart"; 

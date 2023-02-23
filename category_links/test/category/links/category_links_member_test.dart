@@ -2,7 +2,7 @@
 // test/category/links/category_links_member_test.dart 
  
 import "package:test/test.dart"; 
-//import "package:dartling/dartling.dart"; 
+//import "package:ednet_core/ednet_core.dart"; 
 import "package:category_links/category_links.dart"; 
  
 testCategoryLinksMember( 
