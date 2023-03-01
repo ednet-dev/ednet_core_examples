@@ -1,6 +1,6 @@
 part of default_project; 
  
-// lib/gen/default/project/entries.dart 
+// lib/gen/default/project/model_entries.dart
  
 class ProjectEntries extends ModelEntries { 
  
@@ -14,7 +14,7 @@ class ProjectEntries extends ModelEntries {
     return entries; 
   } 
  
-  Entities newEntities(String conceptCode) { 
+  Entities? newEntities(String conceptCode) { 
     var concept = model.concepts.singleWhereCode(conceptCode); 
     if (concept == null) { 
       throw new ConceptError("${conceptCode} concept does not exist.") ; 
@@ -25,7 +25,7 @@ class ProjectEntries extends ModelEntries {
     return null; 
   } 
  
-  Entity newEntity(String conceptCode) { 
+  Entity? newEntity(String conceptCode) { 
     var concept = model.concepts.singleWhereCode(conceptCode); 
     if (concept == null) { 
       throw new ConceptError("${conceptCode} concept does not exist.") ; 

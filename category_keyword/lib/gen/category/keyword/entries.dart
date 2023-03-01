@@ -1,6 +1,6 @@
 part of category_keyword; 
  
-// lib/gen/category/keyword/entries.dart 
+// lib/gen/category/keyword/model_entries.dart
  
 class KeywordEntries extends ModelEntries { 
  
@@ -16,7 +16,7 @@ class KeywordEntries extends ModelEntries {
     return entries; 
   } 
  
-  Entities newEntities(String conceptCode) { 
+  Entities? newEntities(String conceptCode) { 
     var concept = model.concepts.singleWhereCode(conceptCode); 
     if (concept == null) { 
       throw new ConceptError("${conceptCode} concept does not exist.") ; 
@@ -33,7 +33,7 @@ class KeywordEntries extends ModelEntries {
     return null; 
   } 
  
-  Entity newEntity(String conceptCode) { 
+  Entity? newEntity(String conceptCode) { 
     var concept = model.concepts.singleWhereCode(conceptCode); 
     if (concept == null) { 
       throw new ConceptError("${conceptCode} concept does not exist.") ; 

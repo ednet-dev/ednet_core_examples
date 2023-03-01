@@ -1,6 +1,6 @@
 part of category_links; 
  
-// lib/gen/category/links/entries.dart 
+// lib/gen/category/links/model_entries.dart
  
 class LinksEntries extends ModelEntries { 
  
@@ -20,7 +20,7 @@ class LinksEntries extends ModelEntries {
     return entries; 
   } 
  
-  Entities newEntities(String conceptCode) { 
+  Entities? newEntities(String conceptCode) { 
     var concept = model.concepts.singleWhereCode(conceptCode); 
     if (concept == null) { 
       throw new ConceptError("${conceptCode} concept does not exist.") ; 
@@ -46,7 +46,7 @@ class LinksEntries extends ModelEntries {
     return null; 
   } 
  
-  Entity newEntity(String conceptCode) { 
+  Entity? newEntity(String conceptCode) { 
     var concept = model.concepts.singleWhereCode(conceptCode); 
     if (concept == null) { 
       throw new ConceptError("${conceptCode} concept does not exist.") ; 
