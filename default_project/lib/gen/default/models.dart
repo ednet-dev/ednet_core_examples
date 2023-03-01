@@ -1,6 +1,6 @@
 part of default_project; 
  
-// lib/gen/default/models.dart 
+// lib/gen/default/i_domain_models.dart
  
 class DefaultModels extends DomainModels { 
  

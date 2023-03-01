@@ -129,7 +129,7 @@ testCategoryQuestionLink(Repo repo, String domainCode, String modelCode) {
       dzenan.password = 'drifting09';
       dzenan.firstName = 'Dzenan';
       dzenan.lastName = 'Ridjanovic';
-      dzenan.email = 'dzenanr@gmail.com';
+      dzenan.email = 'user@ednet.one';
       dzenan.receiveEmail = true;
       dzenan.role = 'admin';
       dzenan.karma = 17.9;
@@ -430,7 +430,7 @@ testCategoryQuestionLink(Repo repo, String domainCode, String modelCode) {
       expect(dzenan.firstName, equals('Dzenan'));
     });
     test('Find Member by Attribute Id', () {
-      var search = 'dzenanr@gmail.com';
+      var search = 'user@ednet.one';
       Member member = members.singleWhereAttributeId('email', search);
       expect(members, isNotNull);
       expect(member.email, equals(search));

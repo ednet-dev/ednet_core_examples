@@ -88,8 +88,8 @@ testDefaultProjectProject(
     }); 
     
     test('Not found project by new oid', () {
-      var dartlingOid = new Oid.ts(1345648254063);
-      var project = projects.singleWhereOid(dartlingOid);
+      var ednetCoreOid = new Oid.ts(1345648254063);
+      var project = projects.singleWhereOid(ednetCoreOid);
       expect(project, isNull);
     });
     
@@ -276,9 +276,9 @@ testDefaultProjectProject(
 
       //projects.display('After update project id with success');
 
-      var marketingDartling = projects.singleWhereAttributeId('name', newName);
-      expect(marketingDartling, isNotNull);
-      expect(marketingDartling.name, equals(newName));
+      var marketingEDNetCore = projects.singleWhereAttributeId('name', newName);
+      expect(marketingEDNetCore, isNotNull);
+      expect(marketingEDNetCore.name, equals(newName));
     });
     
     test('Update project description with failure', () {

@@ -1,4 +1,4 @@
-github.txt for dartling_examples 
+github.txt for ednet_core_examples
 
 GitHub, Git
 
@@ -27,17 +27,17 @@ http://help.github.com/create-a-repo/
 
 Create a New Repo at GitHub 
 (without README, since cloning will not be used).
-Repository Name: dartling_examples
+Repository Name: ednet_core_examples
 Description: 
-  The dartling_examples project is just a collection of separate EDNetCore examples.
+  The ednet_core_examples project is just a collection of separate EDNetCore examples.
       
 Next steps:
-  cd git/dart/dartling_examples
+  cd git/dart/ednet_core_examples
   git init
   git status
   git add .
   git commit -m 'initial version'
-  git remote add origin https://github.com/dzenanr/dartling_examples.git
+  git remote add origin https://github.com/ednet-dev/ednet_core_examples.git
   git push -u origin master     
 
 -------------------------------------------------------------------------------
@@ -46,15 +46,15 @@ Git with Git Bash
 
 Clone a remote repository into a local repository.
 
-cd git/dart/dartling_examples
-git clone https://github.com/dzenanr/dartling_examples.git
-cd dartling_examples
+cd git/dart/ednet_core_examples
+git clone https://github.com/ednet-dev/ednet_core_examples.git
+cd ednet_core_examples
 
 Read+Write:
-https://github.com/dzenanr/dartling_examples.git
+https://github.com/ednet-dev/ednet_core_examples.git
 
 Read only:
-git://github.com/dzenanr/dartling_examples.git
+git://github.com/ednet-dev/ednet_core_examples.git
 
 Get the latest changes from the remote repository
 
@@ -66,7 +66,7 @@ git pull origin master
 
 Work with a local repository
 
-cd git/dart/dartling_spirals/dartling_examples
+cd git/dart/ednet_core_spirals/ednet_core_examples
 
 git status
 

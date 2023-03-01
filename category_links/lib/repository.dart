@@ -2,7 +2,7 @@ part of category_links;
  
 // lib/repository.dart 
  
-class Repository extends Repository { 
+class Repository extends CoreRepository { 
  
   static const REPOSITORY = "Repository"; 
  

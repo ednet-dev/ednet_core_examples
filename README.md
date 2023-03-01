@@ -2,11 +2,11 @@
 
 ## Description
 
-The dartling_examples project is just a collection of separate
+The ednet_core_examples project is just a collection of separate
 [EDNetCore](https://github.com/ednet-dev/ednet_core) (version 2.0.0) examples
 (Dart Editor applications).
 
-After cloning dartling_examples, open each example separately in Dart Editor.
+After cloning ednet_core_examples, open each example separately in Dart Editor.
 
 The dependencies in the pubspec.yaml file of each example are on the 
 last versions of EDNetCore and ednet_core_default_app on GitHub.

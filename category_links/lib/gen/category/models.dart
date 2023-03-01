@@ -1,6 +1,6 @@
 part of category_links; 
  
-// lib/gen/category/models.dart 
+// lib/gen/category/i_domain_models.dart
  
 class CategoryModels extends DomainModels { 
  

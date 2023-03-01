@@ -71,7 +71,7 @@ _initWithTestSetUpData(var entries) {
   dzenan.password = 'drifting09';
   dzenan.firstName = 'Dzenan';
   dzenan.lastName = 'Ridjanovic';
-  dzenan.email = 'dzenanr@gmail.com';
+  dzenan.email = 'user@ednet.one';
   dzenan.receiveEmail = true;
   dzenan.role = 'admin';
   dzenan.karma = 17.9;
