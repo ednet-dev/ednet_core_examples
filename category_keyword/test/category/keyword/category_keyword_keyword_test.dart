@@ -128,6 +128,6 @@ testCategoryKeywordKeyword(
 } 
  
 void main() { 
-  testCategoryKeywordKeyword(new Repository(), "Category", "Keyword"); 
+  testCategoryKeywordKeyword(CoreRepository(), "Category", "Keyword"); 
 } 
  

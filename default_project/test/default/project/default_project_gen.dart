@@ -15,7 +15,7 @@ initData(CoreRepository repository) {
 } 
  
 void main() { 
-  var repository = new Repository(); 
+  var repository = CoreRepository(); 
   genCode(repository); 
   //initData(repository); 
 } 

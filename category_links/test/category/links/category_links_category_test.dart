@@ -147,6 +147,6 @@ testCategoryLinksCategory(
 } 
  
 void main() { 
-  testCategoryLinksCategory(new Repository(), "Category", "Links"); 
+  testCategoryLinksCategory(CoreRepository(), "Category", "Links"); 
 } 
  

@@ -128,6 +128,6 @@ testDefaultProjectProject(
 } 
  
 void main() { 
-  testDefaultProjectProject(new Repository(), "Default", "Project"); 
+  testDefaultProjectProject(CoreRepository(), "Default", "Project"); 
 } 
  

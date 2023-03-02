@@ -143,6 +143,6 @@ testCategoryLinksComment(
 } 
  
 void main() { 
-  testCategoryLinksComment(new Repository(), "Category", "Links"); 
+  testCategoryLinksComment(CoreRepository(), "Category", "Links"); 
 } 
  

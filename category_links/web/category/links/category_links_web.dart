@@ -20,7 +20,7 @@ showData(CoreRepository repository) {
 } 
  
 void main() { 
-  var repository = new Repository(); 
+  var repository = CoreRepository(); 
   initData(repository); 
   showData(repository); 
 } 
