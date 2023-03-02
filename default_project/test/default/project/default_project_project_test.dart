@@ -69,9 +69,9 @@ testDefaultProjectProject(
       var added = projects.add(project); 
       expect(added, isFalse); 
       expect(projects.length, equals(projectCount)); 
-      expect(projects.errors.length, greaterThan(0)); 
+      expect(projects.exceptions..length, greaterThan(0)); 
  
-      projects.errors.display(title: "Add project unique error"); 
+      projects.exceptions..display(title: "Add project unique error"); 
     }); 
  
       // Find project by required attribute: 
@@ -90,8 +90,8 @@ testDefaultProjectProject(
       var orderedProjects = projects.order(); 
       expect(orderedProjects.isEmpty, isFalse); 
       expect(orderedProjects.length, equals(projects.length)); 
-      expect(orderedProjects.source.isEmpty, isFalse); 
-      expect(orderedProjects.source.length, equals(projects.length)); 
+      expect(orderedProjects.source?.isEmpty, isFalse); 
+      expect(orderedProjects.source?.length, equals(projects.length)); 
       expect(orderedProjects, isNot(same(projects))); 
  
       //orderedProjects.display(title: "Order projects"); 

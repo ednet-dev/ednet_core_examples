@@ -65,10 +65,10 @@ testDefaultProjectProject(
       var added = projects.add(project);
       expect(added, isFalse);
       expect(projects.length, equals(projectCount));
-      expect(projects.errors.length, equals(1));
-      expect(projects.errors.toList()[0].category, equals('required'));
+      expect(projects.exceptions..length, equals(1));
+      expect(projects.exceptions..toList()[0].category, equals('required'));
 
-      projects.errors.display(title:'Add project required error');
+      projects.exceptions..display(title:'Add project required error');
     });
  
     test('Add project pre validation error', () {
@@ -81,10 +81,10 @@ testDefaultProjectProject(
       var added = projects.add(project);
       expect(added, isFalse);
       expect(projects.length, equals(projectCount));
-      expect(projects.errors, hasLength(1));
-      expect(projects.errors.toList()[0].category, equals('pre'));
+      expect(projects.exceptions., hasLength(1));
+      expect(projects.exceptions..toList()[0].category, equals('pre'));
 
-      projects.errors.display(title:'Add project pre validation error');
+      projects.exceptions..display(title:'Add project pre validation error');
     }); 
     
     test('Not found project by new oid', () {
@@ -162,7 +162,7 @@ testDefaultProjectProject(
       randomProject.description = "Dart programming blog.";
       var programmingProjects = projects.selectWhere((p) => p.onProgramming);
       expect(programmingProjects.isEmpty, isFalse);
-      expect(programmingProjects.source.isEmpty, isFalse);
+      expect(programmingProjects.source?.isEmpty, isFalse);
       var projectsCount = projects.length;  
 
       var projectConcept = projects.concept;
@@ -185,7 +185,7 @@ testDefaultProjectProject(
 
       Projects programmingProjects = projects.selectWhere((p) => p.onProgramming);
       expect(programmingProjects.isEmpty, isFalse);
-      expect(programmingProjects.source.isEmpty, isFalse);
+      expect(programmingProjects.source?.isEmpty, isFalse);
 
       var randomName = randomProject.name;
       var project = programmingProjects.findByNameId(randomName);
@@ -201,8 +201,8 @@ testDefaultProjectProject(
       var orderedProjects = projects.order(); 
       expect(orderedProjects.isEmpty, isFalse); 
       expect(orderedProjects.length, equals(projects.length)); 
-      expect(orderedProjects.source.isEmpty, isFalse); 
-      expect(orderedProjects.source.length, equals(projects.length));
+      expect(orderedProjects.source?.isEmpty, isFalse); 
+      expect(orderedProjects.source?.length, equals(projects.length));
       expect(orderedProjects, isNot(same(projects))); 
  
       //orderedProjects.display(title: "Order projects by id"); 
@@ -233,7 +233,7 @@ testDefaultProjectProject(
       var beforeNameUpdate = marketing.name;
       try {
         marketing.name = 'Marketing ednet_core';
-      } on UpdateError catch (e) {
+      } on UpdateException catch (e) {
         expect(marketing.name, equals(beforeNameUpdate));
       }
     });

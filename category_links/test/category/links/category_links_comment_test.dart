@@ -63,10 +63,10 @@ testCategoryLinksComment(
       var added = comments.add(comment); 
       expect(added, isFalse); 
       expect(comments.length, equals(commentCount)); 
-      expect(comments.errors.length, greaterThan(0)); 
-      expect(comments.errors.toList()[0].category, equals("required")); 
+      expect(comments.exceptions..length, greaterThan(0)); 
+      expect(comments.exceptions..toList()[0].category, equals("required")); 
  
-      comments.errors.display(title: "Add comment required error"); 
+      comments.exceptions..display(title: "Add comment required error"); 
     }); 
  
     test("Add comment unique error", () { 
@@ -106,8 +106,8 @@ testCategoryLinksComment(
       var orderedComments = comments.order(); 
       expect(orderedComments.isEmpty, isFalse); 
       expect(orderedComments.length, equals(comments.length)); 
-      expect(orderedComments.source.isEmpty, isFalse); 
-      expect(orderedComments.source.length, equals(comments.length)); 
+      expect(orderedComments.source?.isEmpty, isFalse); 
+      expect(orderedComments.source?.length, equals(comments.length)); 
       expect(orderedComments, isNot(same(comments))); 
  
       //orderedComments.display(title: "Order comments"); 

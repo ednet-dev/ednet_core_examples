@@ -63,10 +63,10 @@ testCategoryLinksMember(
       var added = members.add(member); 
       expect(added, isFalse); 
       expect(members.length, equals(memberCount)); 
-      expect(members.errors.length, greaterThan(0)); 
-      expect(members.errors.toList()[0].category, equals("required")); 
+      expect(members.exceptions..length, greaterThan(0)); 
+      expect(members.exceptions..toList()[0].category, equals("required")); 
  
-      members.errors.display(title: "Add member required error"); 
+      members.exceptions..display(title: "Add member required error"); 
     }); 
  
     test("Add member unique error", () { 
@@ -78,9 +78,9 @@ testCategoryLinksMember(
       var added = members.add(member); 
       expect(added, isFalse); 
       expect(members.length, equals(memberCount)); 
-      expect(members.errors.length, greaterThan(0)); 
+      expect(members.exceptions..length, greaterThan(0)); 
  
-      members.errors.display(title: "Add member unique error"); 
+      members.exceptions..display(title: "Add member unique error"); 
     }); 
  
     test("Find member by firstName", () { 
@@ -109,8 +109,8 @@ testCategoryLinksMember(
       var orderedMembers = members.order(); 
       expect(orderedMembers.isEmpty, isFalse); 
       expect(orderedMembers.length, equals(members.length)); 
-      expect(orderedMembers.source.isEmpty, isFalse); 
-      expect(orderedMembers.source.length, equals(members.length)); 
+      expect(orderedMembers.source?.isEmpty, isFalse); 
+      expect(orderedMembers.source?.length, equals(members.length)); 
       expect(orderedMembers, isNot(same(members))); 
  
       //orderedMembers.display(title: "Order members"); 

@@ -63,10 +63,10 @@ testCategoryLinksCategory(
       var added = categories.add(category); 
       expect(added, isFalse); 
       expect(categories.length, equals(categoryCount)); 
-      expect(categories.errors.length, greaterThan(0)); 
-      expect(categories.errors.toList()[0].category, equals("required")); 
+      expect(categories.exceptions..length, greaterThan(0)); 
+      expect(categories.exceptions..toList()[0].category, equals("required")); 
  
-      categories.errors.display(title: "Add category required error"); 
+      categories.exceptions..display(title: "Add category required error"); 
     }); 
  
     test("Add category unique error", () { 
@@ -78,9 +78,9 @@ testCategoryLinksCategory(
       var added = categories.add(category); 
       expect(added, isFalse); 
       expect(categories.length, equals(categoryCount)); 
-      expect(categories.errors.length, greaterThan(0)); 
+      expect(categories.exceptions..length, greaterThan(0)); 
  
-      categories.errors.display(title: "Add category unique error"); 
+      categories.exceptions..display(title: "Add category unique error"); 
     }); 
  
     test("Find category by approved", () { 
@@ -109,8 +109,8 @@ testCategoryLinksCategory(
       var orderedCategories = categories.order(); 
       expect(orderedCategories.isEmpty, isFalse); 
       expect(orderedCategories.length, equals(categories.length)); 
-      expect(orderedCategories.source.isEmpty, isFalse); 
-      expect(orderedCategories.source.length, equals(categories.length)); 
+      expect(orderedCategories.source?.isEmpty, isFalse); 
+      expect(orderedCategories.source?.length, equals(categories.length)); 
       expect(orderedCategories, isNot(same(categories))); 
  
       //orderedCategories.display(title: "Order categories"); 
