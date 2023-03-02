@@ -6,14 +6,14 @@ import "dart:html";
 import "package:ednet_core_default_app/ednet_core_default_app.dart"; 
 import "package:category_keyword/category_keyword.dart"; 
  
-initData(Repository repository) { 
+initData(CoreRepository repository) { 
    var categoryDomain = repository.getDomainModels("Category"); 
    var keywordModel = categoryDomain.getModelEntries("Keyword"); 
    keywordModel.init(); 
    //keywordModel.display(); 
 } 
  
-showData(Repository repository) { 
+showData(CoreRepository repository) { 
    var mainView = new View(document, "main"); 
    mainView.repo = repository; 
    new RepoMainSection(mainView); 

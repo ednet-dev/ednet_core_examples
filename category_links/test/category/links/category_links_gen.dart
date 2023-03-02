@@ -3,11 +3,11 @@
  
 import "package:category_links/category_links.dart"; 
  
-genCode(Repository repository) { 
+genCode(CoreRepository repository) { 
   repository.gen("category_links"); 
 } 
  
-initData(Repository repository) { 
+initData(CoreRepository repository) { 
    var categoryDomain = repository.getDomainModels("Category"); 
    var linksModel = categoryDomain.getModelEntries("Links"); 
    linksModel.init(); 

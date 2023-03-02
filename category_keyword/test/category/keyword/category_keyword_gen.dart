@@ -3,11 +3,11 @@
  
 import "package:category_keyword/category_keyword.dart"; 
  
-genCode(Repository repository) { 
+genCode(CoreRepository repository) { 
   repository.gen("category_keyword"); 
 } 
  
-initData(Repository repository) { 
+initData(CoreRepository repository) { 
    var categoryDomain = repository.getDomainModels("Category"); 
    var keywordModel = categoryDomain.getModelEntries("Keyword"); 
    keywordModel.init(); 
