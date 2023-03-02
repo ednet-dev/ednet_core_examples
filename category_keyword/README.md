@@ -4,4 +4,4 @@
 
 ## Description: 
 category_keyword project uses 
-[EDNetCore] (https://github.com/ednet-dev/ednet_core) for the model.
+[EDNetCore](https://github.com/ednet-dev/ednet_core) for the model.
