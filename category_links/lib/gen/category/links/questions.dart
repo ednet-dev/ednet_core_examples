@@ -4,56 +4,47 @@ part of category_links;
  
 abstract class QuestionGen extends Entity<Question> { 
  
-  QuestionGen(Concept concept) {
-    this.concept = concept;
-  }
- 
-  QuestionGen.withId(Concept concept, int number) {
-    this.concept = concept;
-    setAttribute("number", number); 
+  QuestionGen(Concept concept) { 
+    this.concept = concept; 
   } 
  
-  Reference get categoryReference => getReference("category"); 
-  set categoryReference(Reference reference) => setReference("category", reference); 
+  Reference get categoryReference => getReference("category") as Reference; 
+  void set categoryReference(Reference reference) { setReference("category", reference); } 
   
-  Category get category => getParent("category"); 
-  set category(Category p) => setParent("category", p); 
+  Category get category => getParent("category") as Category; 
+  void set category(Category p) { setParent("category", p); } 
   
   int get number => getAttribute("number"); 
-  set number(int a) => setAttribute("number", a); 
+  void set number(int a) { setAttribute("number", a); } 
   
   String get type => getAttribute("type"); 
-  set type(String a) => setAttribute("type", a); 
+  void set type(String a) { setAttribute("type", a); } 
   
   String get text => getAttribute("text"); 
-  set text(String a) => setAttribute("text", a); 
+  void set text(String a) { setAttribute("text", a); } 
   
   String get response => getAttribute("response"); 
-  set response(String a) => setAttribute("response", a); 
+  void set response(String a) { setAttribute("response", a); } 
   
   String get createdOn => getAttribute("createdOn"); 
-  set createdOn(String a) => setAttribute("createdOn", a); 
+  void set createdOn(String a) { setAttribute("createdOn", a); } 
   
   num get points => getAttribute("points"); 
-  set points(num a) => setAttribute("points", a); 
+  void set points(num a) { setAttribute("points", a); } 
   
-  Question newEntity() => new Question(concept); 
-  Questions newEntities() => new Questions(concept); 
+  Question newEntity() => Question(concept); 
+  Questions newEntities() => Questions(concept); 
   
-  int numberCompareTo(Question other) { 
-    return number.compareTo(other.number); 
-  } 
- 
 } 
  
 abstract class QuestionsGen extends Entities<Question> { 
  
-  QuestionsGen(Concept concept) {
-    this.concept = concept;
-  }
+  QuestionsGen(Concept concept) { 
+    this.concept = concept; 
+  } 
  
-  Questions newEntities() => new Questions(concept); 
-  Question newEntity() => new Question(concept); 
+  Questions newEntities() => Questions(concept); 
+  Question newEntity() => Question(concept); 
   
 } 
  

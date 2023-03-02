@@ -1,47 +1,47 @@
 part of category_links; 
  
-// lib/gen/category/links/model_entries.dart
+// lib/gen/category/links/model_entries.dart 
  
 class LinksEntries extends ModelEntries { 
  
   LinksEntries(Model model) : super(model); 
  
   Map<String, Entities> newEntries() { 
-    var entries = new Map<String, Entities>(); 
+    var entries = Map<String, Entities>(); 
     var concept; 
     concept = model.concepts.singleWhereCode("Member"); 
-    entries["Member"] = new Members(concept); 
+    entries["Member"] = Members(concept); 
     concept = model.concepts.singleWhereCode("Category"); 
-    entries["Category"] = new Categories(concept); 
+    entries["Category"] = Categories(concept); 
     concept = model.concepts.singleWhereCode("Comment"); 
-    entries["Comment"] = new Comments(concept); 
+    entries["Comment"] = Comments(concept); 
     concept = model.concepts.singleWhereCode("Question"); 
-    entries["Question"] = new Questions(concept); 
+    entries["Question"] = Questions(concept); 
     return entries; 
   } 
  
   Entities? newEntities(String conceptCode) { 
     var concept = model.concepts.singleWhereCode(conceptCode); 
     if (concept == null) { 
-      throw new ConceptError("${conceptCode} concept does not exist.") ; 
+      throw ConceptError("${conceptCode} concept does not exist.") ; 
     } 
     if (concept.code == "Member") { 
-      return new Members(concept); 
+      return Members(concept); 
     } 
     if (concept.code == "Category") { 
-      return new Categories(concept); 
+      return Categories(concept); 
     } 
     if (concept.code == "WebLink") { 
-      return new WebLinks(concept); 
+      return WebLinks(concept); 
     } 
     if (concept.code == "Interest") { 
-      return new Interests(concept); 
+      return Interests(concept); 
     } 
     if (concept.code == "Comment") { 
-      return new Comments(concept); 
+      return Comments(concept); 
     } 
     if (concept.code == "Question") { 
-      return new Questions(concept); 
+      return Questions(concept); 
     } 
     return null; 
   } 
@@ -49,33 +49,33 @@ class LinksEntries extends ModelEntries {
   Entity? newEntity(String conceptCode) { 
     var concept = model.concepts.singleWhereCode(conceptCode); 
     if (concept == null) { 
-      throw new ConceptError("${conceptCode} concept does not exist.") ; 
+      throw ConceptError("${conceptCode} concept does not exist.") ; 
     } 
     if (concept.code == "Member") { 
-      return new Member(concept); 
+      return Member(concept); 
     } 
     if (concept.code == "Category") { 
-      return new Category(concept); 
+      return Category(concept); 
     } 
     if (concept.code == "WebLink") { 
-      return new WebLink(concept); 
+      return WebLink(concept); 
     } 
     if (concept.code == "Interest") { 
-      return new Interest(concept); 
+      return Interest(concept); 
     } 
     if (concept.code == "Comment") { 
-      return new Comment(concept); 
+      return Comment(concept); 
     } 
     if (concept.code == "Question") { 
-      return new Question(concept); 
+      return Question(concept); 
     } 
     return null; 
   } 
  
-  Members get members => getEntry("Member"); 
-  Categories get categories => getEntry("Category"); 
-  Comments get comments => getEntry("Comment"); 
-  Questions get questions => getEntry("Question"); 
+  Members get members => getEntry("Member") as Members; 
+  Categories get categories => getEntry("Category") as Categories; 
+  Comments get comments => getEntry("Comment") as Comments; 
+  Questions get questions => getEntry("Question") as Questions; 
  
 } 
  

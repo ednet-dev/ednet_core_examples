@@ -7,9 +7,9 @@ class Repository extends CoreRepository {
   static const REPOSITORY = "Repository"; 
  
   Repository([String code=REPOSITORY]) : super(code) { 
-    var domain = new Domain("Category"); 
+    var domain = Domain("Category"); 
     domains.add(domain); 
-    add(new CategoryDomain(domain)); 
+    add(CategoryDomain(domain)); 
  
   } 
  

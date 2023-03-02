@@ -6,9 +6,6 @@ class Category extends CategoryGen {
  
   Category(Concept concept) : super(concept); 
  
-  Category.withId(Concept concept, String name) : 
-    super.withId(concept, name); 
- 
   // added after code gen - begin 
  
   // added after code gen - end 

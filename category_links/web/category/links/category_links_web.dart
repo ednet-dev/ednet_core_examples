@@ -1,22 +1,24 @@
  
 // web/category/links/category_links_web.dart 
  
-import "dart:html"; 
+
+import "package:ednet_core/ednet_core.dart"; 
  
 import "package:ednet_core_default_app/ednet_core_default_app.dart"; 
 import "package:category_links/category_links.dart"; 
  
-initData(CoreRepository repository) { 
-   var categoryDomain = repository.getDomainModels("Category"); 
-   var linksModel = categoryDomain.getModelEntries("Links"); 
-   linksModel.init(); 
-   //linksModel.display(); 
+void initData(CoreRepository repository) { 
+   CategoryDomain? categoryDomain = repository.getDomainModels("Category") as CategoryDomain?; 
+   LinksModel? linksModel = categoryDomain?.getModelEntries("Links") as LinksModel?; 
+   linksModel?.init(); 
+   linksModel?.display(); 
 } 
  
-showData(CoreRepository repository) { 
-   var mainView = new View(document, "main"); 
-   mainView.repo = repository; 
-   new RepoMainSection(mainView); 
+void showData(CoreRepository repository) { 
+   // var mainView = View(document, "main"); 
+   // mainView.repo = repository; 
+   // new RepoMainSection(mainView); 
+   print("not implemented"); 
 } 
  
 void main() { 

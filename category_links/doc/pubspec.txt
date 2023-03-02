@@ -1,40 +1,33 @@
 name: category_links
+author: Your Name
+homepage: http://ondart.me/
 version: 0.0.1
-homepage: https://ednet.dev
-
+description: category_links application that uses ednet_core for its model.
 environment:
-  sdk: '>=2.18.6 <3.0.0'
+  sdk: '>=1.10.0 <2.0.0'
+dependencies:
+  browser: '>=0.10.0 <0.11.0'
+  ednet_core: '>=2.0.0 <3.0.0'
+  ednet_core_default_app: '>=2.0.0 <3.0.0'
 
 dependencies:
+  browser: '>=0.10.0 <0.11.0'
   ednet_core:
-    path: ../../../../ednet_cms/packages/ednet_core
+    git: 'https://github.com/ednet-dev/ednet_core.git'
   ednet_core_default_app:
-    path: ../../ednet_core_default_app
-    
-?
-dependencies:
-  ednet_core:
-    path: ../../../../ednet_cms/packages/ednet_core
-  ednet_core_default_app:
-    path: ../../ednet_core_default_app
-?
+    git: 'https://github.com/ednet-dev/ednet_core_default_app.git'
 
 dependencies:
+  browser: '>=0.10.0 <0.11.0'
   ednet_core:
-    path: ../../../../ednet_cms/packages/ednet_core
+    path: 'C:\Users\ridjanod.FSA-RIDJANOD-2\dart\model\ednet_core'
   ednet_core_default_app:
-    path: ../../ednet_core_default_app
+    path: 'C:\Users\ridjanod.FSA-RIDJANOD-2\dart\model\ednet_core_default_app'
 
-dependencies:
-  ednet_core:
-    path: ../../../../ednet_cms/packages/ednet_core
-  ednet_core_default_app:
-    path: ../../ednet_core_default_app
-    
 dependencies:
   browser: any
-  ednet_core: any
-  ednet_core_default_app: any
+  ednet_core:
+    path: /home/dzenanr/dart/model/ednet_core
+  ednet_core_default_app:
+    path: /home/dzenanr/dart/model/ednet_core_default_app
   
-
-     

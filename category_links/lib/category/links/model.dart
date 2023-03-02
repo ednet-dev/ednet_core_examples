@@ -7,112 +7,112 @@ class LinksModel extends LinksEntries {
  
   LinksModel(Model model) : super(model); 
  
-  fromJsonToMemberEntry() { 
+  void fromJsonToMemberEntry() { 
     fromJsonToEntry(categoryLinksMemberEntry); 
   } 
  
-  fromJsonToCategoryEntry() { 
+  void fromJsonToCategoryEntry() { 
     fromJsonToEntry(categoryLinksCategoryEntry); 
   } 
  
-  fromJsonToCommentEntry() { 
+  void fromJsonToCommentEntry() { 
     fromJsonToEntry(categoryLinksCommentEntry); 
   } 
  
-  fromJsonToQuestionEntry() { 
+  void fromJsonToQuestionEntry() { 
     fromJsonToEntry(categoryLinksQuestionEntry); 
   } 
  
-  fromJsonToModel() { 
+  void fromJsonToModel() { 
     fromJson(categoryLinksModel); 
   } 
  
-  init() { 
+  void init() { 
     initCategories(); 
     initMembers(); 
     initComments(); 
     initQuestions(); 
   } 
  
-  initMembers() { 
-    var member1 = new Member(members.concept); 
-    member1.email = "sara@rodriguez.com"; 
-    member1.firstName = "tall"; 
-    member1.lastName = "do"; 
+  void initMembers() { 
+    var member1 = Member(members.concept); 
+    member1.email = 'antonio@flores.com'; 
+    member1.firstName = 'accident'; 
+    member1.lastName = 'book'; 
     member1.startedOn = new DateTime.now(); 
     member1.receiveEmail = true; 
-    member1.password = "family"; 
-    member1.role = "cable"; 
-    member1.karma = 977.7744051432732; 
-    member1.about = "done"; 
+    member1.password = 'cash'; 
+    member1.role = 'accomodation'; 
+    member1.karma = 779.9208623816488; 
+    member1.about = 'bank'; 
     members.add(member1); 
  
-    var member1interests1 = new Interest(member1.interests.concept); 
-    member1interests1.description = "pencil"; 
+    var member1interests1 = Interest(member1.interests.concept); 
+    member1interests1.description = 'place'; 
     var member1interests1Category = categories.random(); 
     member1interests1.category = member1interests1Category; 
     member1interests1.member = member1; 
     member1.interests.add(member1interests1); 
     member1interests1Category.interests.add(member1interests1); 
  
-    var member1interests2 = new Interest(member1.interests.concept); 
-    member1interests2.description = "done"; 
+    var member1interests2 = Interest(member1.interests.concept); 
+    member1interests2.description = 'brad'; 
     var member1interests2Category = categories.random(); 
     member1interests2.category = member1interests2Category; 
     member1interests2.member = member1; 
     member1.interests.add(member1interests2); 
     member1interests2Category.interests.add(member1interests2); 
  
-    var member2 = new Member(members.concept); 
-    member2.email = "michelle@cruz.com"; 
-    member2.firstName = "beginning"; 
-    member2.lastName = "selfdo"; 
+    var member2 = Member(members.concept); 
+    member2.email = 'matt@carter.com'; 
+    member2.firstName = 'selfdo'; 
+    member2.lastName = 'series'; 
     member2.startedOn = new DateTime.now(); 
     member2.receiveEmail = false; 
-    member2.password = "river"; 
-    member2.role = "family"; 
-    member2.karma = 112; 
-    member2.about = "capacity"; 
+    member2.password = 'school'; 
+    member2.role = 'capacity'; 
+    member2.karma = -644; 
+    member2.about = 'bank'; 
     members.add(member2); 
  
-    var member2interests1 = new Interest(member2.interests.concept); 
-    member2interests1.description = "agile"; 
+    var member2interests1 = Interest(member2.interests.concept); 
+    member2interests1.description = 'observation'; 
     var member2interests1Category = categories.random(); 
     member2interests1.category = member2interests1Category; 
     member2interests1.member = member2; 
     member2.interests.add(member2interests1); 
     member2interests1Category.interests.add(member2interests1); 
  
-    var member2interests2 = new Interest(member2.interests.concept); 
-    member2interests2.description = "season"; 
+    var member2interests2 = Interest(member2.interests.concept); 
+    member2interests2.description = 'service'; 
     var member2interests2Category = categories.random(); 
     member2interests2.category = member2interests2Category; 
     member2interests2.member = member2; 
     member2.interests.add(member2interests2); 
     member2interests2Category.interests.add(member2interests2); 
  
-    var member3 = new Member(members.concept); 
-    member3.email = "ryan@baker.com"; 
-    member3.firstName = "call"; 
-    member3.lastName = "taxi"; 
+    var member3 = Member(members.concept); 
+    member3.email = 'anna@ruiz.com'; 
+    member3.firstName = 'holiday'; 
+    member3.lastName = 'end'; 
     member3.startedOn = new DateTime.now(); 
-    member3.receiveEmail = true; 
-    member3.password = "hall"; 
-    member3.role = "cloud"; 
-    member3.karma = 882.7201579524965; 
-    member3.about = "account"; 
+    member3.receiveEmail = false; 
+    member3.password = 'sin'; 
+    member3.role = 'sentence'; 
+    member3.karma = 991.8764575503192; 
+    member3.about = 'concern'; 
     members.add(member3); 
  
-    var member3interests1 = new Interest(member3.interests.concept); 
-    member3interests1.description = "consciousness"; 
+    var member3interests1 = Interest(member3.interests.concept); 
+    member3interests1.description = 'security'; 
     var member3interests1Category = categories.random(); 
     member3interests1.category = member3interests1Category; 
     member3interests1.member = member3; 
     member3.interests.add(member3interests1); 
     member3interests1Category.interests.add(member3interests1); 
  
-    var member3interests2 = new Interest(member3.interests.concept); 
-    member3interests2.description = "ticket"; 
+    var member3interests2 = Interest(member3.interests.concept); 
+    member3interests2.description = 'children'; 
     var member3interests2Category = categories.random(); 
     member3interests2.category = member3interests2Category; 
     member3interests2.member = member3; 
@@ -121,79 +121,79 @@ class LinksModel extends LinksEntries {
  
   } 
  
-  initCategories() { 
-    var category1 = new Category(categories.concept); 
-    category1.name = "web"; 
-    category1.description = "email"; 
-    category1.approved = false; 
+  void initCategories() { 
+    var category1 = Category(categories.concept); 
+    category1.name = 'yellow'; 
+    category1.description = 'family'; 
+    category1.approved = true; 
     categories.add(category1); 
  
-    var category1webLinks1 = new WebLink(category1.webLinks.concept); 
-    category1webLinks1.subject = "electronic"; 
-    category1webLinks1.url = Uri.parse("https://github.com/ErikGrimes/polymer_ui_elements"); 
-    category1webLinks1.description = "sin"; 
+    var category1webLinks1 = WebLink(category1.webLinks.concept); 
+    category1webLinks1.subject = 'country'; 
+    category1webLinks1.url = Uri.parse('http://code.google.com/p/dart-enumerators/'); 
+    category1webLinks1.description = 'park'; 
     category1webLinks1.createdOn = new DateTime.now(); 
     category1webLinks1.updatedOn = new DateTime.now(); 
     category1webLinks1.approved = false; 
     category1webLinks1.category = category1; 
     category1.webLinks.add(category1webLinks1); 
  
-    var category1webLinks2 = new WebLink(category1.webLinks.concept); 
-    category1webLinks2.subject = "teaching"; 
-    category1webLinks2.url = Uri.parse("http://www.sarahmei.com/blog/2013/11/11/why-you-should-never-use-mongodb/"); 
-    category1webLinks2.description = "ship"; 
+    var category1webLinks2 = WebLink(category1.webLinks.concept); 
+    category1webLinks2.subject = 'nothingness'; 
+    category1webLinks2.url = Uri.parse('http://goodui.org/'); 
+    category1webLinks2.description = 'wave'; 
     category1webLinks2.createdOn = new DateTime.now(); 
     category1webLinks2.updatedOn = new DateTime.now(); 
-    category1webLinks2.approved = true; 
+    category1webLinks2.approved = false; 
     category1webLinks2.category = category1; 
     category1.webLinks.add(category1webLinks2); 
  
-    var category2 = new Category(categories.concept); 
-    category2.name = "chemist"; 
-    category2.description = "umbrella"; 
-    category2.approved = false; 
+    var category2 = Category(categories.concept); 
+    category2.name = 'city'; 
+    category2.description = 'city'; 
+    category2.approved = true; 
     categories.add(category2); 
  
-    var category2webLinks1 = new WebLink(category2.webLinks.concept); 
-    category2webLinks1.subject = "hot"; 
-    category2webLinks1.url = Uri.parse("http://www.fastcompany.com/3021179/secrets-of-running-a-six-figure-airbnb-business"); 
-    category2webLinks1.description = "teaching"; 
+    var category2webLinks1 = WebLink(category2.webLinks.concept); 
+    category2webLinks1.subject = 'discount'; 
+    category2webLinks1.url = Uri.parse('http://www.codewars.com/'); 
+    category2webLinks1.description = 'mile'; 
     category2webLinks1.createdOn = new DateTime.now(); 
     category2webLinks1.updatedOn = new DateTime.now(); 
     category2webLinks1.approved = true; 
     category2webLinks1.category = category2; 
     category2.webLinks.add(category2webLinks1); 
  
-    var category2webLinks2 = new WebLink(category2.webLinks.concept); 
-    category2webLinks2.subject = "mile"; 
-    category2webLinks2.url = Uri.parse("http://fivera.net/create-a-self-hosted-wordpress-site-for-free/"); 
-    category2webLinks2.description = "algorithm"; 
+    var category2webLinks2 = WebLink(category2.webLinks.concept); 
+    category2webLinks2.subject = 'dvd'; 
+    category2webLinks2.url = Uri.parse('http://iznadsvih.blogspot.ca/2013/09/sarajevo-moje-voljeno_29.html'); 
+    category2webLinks2.description = 'economy'; 
     category2webLinks2.createdOn = new DateTime.now(); 
     category2webLinks2.updatedOn = new DateTime.now(); 
-    category2webLinks2.approved = false; 
+    category2webLinks2.approved = true; 
     category2webLinks2.category = category2; 
     category2.webLinks.add(category2webLinks2); 
  
-    var category3 = new Category(categories.concept); 
-    category3.name = "health"; 
-    category3.description = "navigation"; 
+    var category3 = Category(categories.concept); 
+    category3.name = 'lunch'; 
+    category3.description = 'dvd'; 
     category3.approved = true; 
     categories.add(category3); 
  
-    var category3webLinks1 = new WebLink(category3.webLinks.concept); 
-    category3webLinks1.subject = "beans"; 
-    category3webLinks1.url = Uri.parse("http://www.nomadmicrohomes.com/"); 
-    category3webLinks1.description = "judge"; 
+    var category3webLinks1 = WebLink(category3.webLinks.concept); 
+    category3webLinks1.subject = 'place'; 
+    category3webLinks1.url = Uri.parse('https://github.com/vadimtsushko/angular_objectory_demo'); 
+    category3webLinks1.description = 'service'; 
     category3webLinks1.createdOn = new DateTime.now(); 
     category3webLinks1.updatedOn = new DateTime.now(); 
     category3webLinks1.approved = false; 
     category3webLinks1.category = category3; 
     category3.webLinks.add(category3webLinks1); 
  
-    var category3webLinks2 = new WebLink(category3.webLinks.concept); 
-    category3webLinks2.subject = "baby"; 
-    category3webLinks2.url = Uri.parse("http://www.mymodernmet.com/profiles/blogs/ian-lorne-kent-nomad-micro-home"); 
-    category3webLinks2.description = "pattern"; 
+    var category3webLinks2 = WebLink(category3.webLinks.concept); 
+    category3webLinks2.subject = 'edition'; 
+    category3webLinks2.url = Uri.parse('http://restcountries.eu/'); 
+    category3webLinks2.description = 'water'; 
     category3webLinks2.createdOn = new DateTime.now(); 
     category3webLinks2.updatedOn = new DateTime.now(); 
     category3webLinks2.approved = true; 
@@ -202,50 +202,50 @@ class LinksModel extends LinksEntries {
  
   } 
  
-  initComments() { 
-    var comment1 = new Comment(comments.concept); 
-    comment1.text = "hat"; 
-    comment1.source = "east"; 
+  void initComments() { 
+    var comment1 = Comment(comments.concept); 
+    comment1.text = 'seed'; 
+    comment1.source = 'election'; 
     comment1.createdOn = new DateTime.now(); 
     comments.add(comment1); 
  
-    var comment2 = new Comment(comments.concept); 
-    comment2.text = "effort"; 
-    comment2.source = "team"; 
+    var comment2 = Comment(comments.concept); 
+    comment2.text = 'river'; 
+    comment2.source = 'tape'; 
     comment2.createdOn = new DateTime.now(); 
     comments.add(comment2); 
  
-    var comment3 = new Comment(comments.concept); 
-    comment3.text = "hot"; 
-    comment3.source = "explanation"; 
+    var comment3 = Comment(comments.concept); 
+    comment3.text = 'darts'; 
+    comment3.source = 'rice'; 
     comment3.createdOn = new DateTime.now(); 
     comments.add(comment3); 
  
   } 
  
-  initQuestions() { 
-    var question1 = new Question(questions.concept); 
-    question1.type = "observation"; 
-    question1.text = "video"; 
-    question1.response = "pattern"; 
-    question1.createdOn = "employer"; 
-    question1.points = 85.57957236826886; 
+  void initQuestions() { 
+    var question1 = Question(questions.concept); 
+    question1.type = 'pattern'; 
+    question1.text = 'notch'; 
+    question1.response = 'sentence'; 
+    question1.createdOn = 'agile'; 
+    question1.points = 843.4028663762745; 
     questions.add(question1); 
  
-    var question2 = new Question(questions.concept); 
-    question2.type = "life"; 
-    question2.text = "umbrella"; 
-    question2.response = "accomodation"; 
-    question2.createdOn = "privacy"; 
-    question2.points = -921; 
+    var question2 = Question(questions.concept); 
+    question2.type = 'camping'; 
+    question2.text = 'university'; 
+    question2.response = 'children'; 
+    question2.createdOn = 'beans'; 
+    question2.points = 340; 
     questions.add(question2); 
  
-    var question3 = new Question(questions.concept); 
-    question3.type = "lake"; 
-    question3.text = "tape"; 
-    question3.response = "privacy"; 
-    question3.createdOn = "advisor"; 
-    question3.points = 929.3635539281017; 
+    var question3 = Question(questions.concept); 
+    question3.type = 'tax'; 
+    question3.text = 'thing'; 
+    question3.response = 'hat'; 
+    question3.createdOn = 'seed'; 
+    question3.points = 72; 
     questions.add(question3); 
  
   } 

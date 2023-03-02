@@ -1,6 +1,6 @@
 part of category_links; 
  
-// lib/gen/category/i_domain_models.dart
+// lib/gen/category/i_domain_models.dart 
  
 class CategoryModels extends DomainModels { 
  
@@ -8,7 +8,7 @@ class CategoryModels extends DomainModels {
     // fromJsonToModel function from ednet_core/lib/domain/model/transfer.json.dart 
  
     Model model = fromJsonToModel(categoryLinksModelJson, domain, "Links"); 
-    LinksModel linksModel = new LinksModel(model); 
+    LinksModel linksModel = LinksModel(model); 
     add(linksModel); 
  
   } 

@@ -6,9 +6,6 @@ class Question extends QuestionGen {
  
   Question(Concept concept) : super(concept); 
  
-  Question.withId(Concept concept, int number) : 
-    super.withId(concept, number); 
- 
   // added after code gen - begin 
  
   // added after code gen - end 

@@ -4,32 +4,32 @@ part of category_links;
  
 abstract class CommentGen extends Entity<Comment> { 
  
-  CommentGen(Concept concept) {
-    this.concept = concept;
-  }
+  CommentGen(Concept concept) { 
+    this.concept = concept; 
+  } 
  
   String get text => getAttribute("text"); 
-  set text(String a) => setAttribute("text", a); 
+  void set text(String a) { setAttribute("text", a); } 
   
   String get source => getAttribute("source"); 
-  set source(String a) => setAttribute("source", a); 
+  void set source(String a) { setAttribute("source", a); } 
   
   DateTime get createdOn => getAttribute("createdOn"); 
-  set createdOn(DateTime a) => setAttribute("createdOn", a); 
+  void set createdOn(DateTime a) { setAttribute("createdOn", a); } 
   
-  Comment newEntity() => new Comment(concept); 
-  Comments newEntities() => new Comments(concept); 
+  Comment newEntity() => Comment(concept); 
+  Comments newEntities() => Comments(concept); 
   
 } 
  
 abstract class CommentsGen extends Entities<Comment> { 
  
-  CommentsGen(Concept concept) {
-    this.concept = concept;
-  }
+  CommentsGen(Concept concept) { 
+    this.concept = concept; 
+  } 
  
-  Comments newEntities() => new Comments(concept); 
-  Comment newEntity() => new Comment(concept); 
+  Comments newEntities() => Comments(concept); 
+  Comment newEntity() => Comment(concept); 
   
 } 
  

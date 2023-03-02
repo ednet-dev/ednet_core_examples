@@ -1,13 +1,11 @@
- 
-// lib/category_links_app.dart 
- 
-/*
+  // lib/category_links_app.dart
+  /*
 http://opensource.org/licenses/
 
 http://en.wikipedia.org/wiki/BSD_license
 3-clause license ("New BSD License" or "Modified BSD License")
 
-Copyright (c) 2023, ednet_core project authors
+Copyright (c) 2023, EDNetCore project authors
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -17,7 +15,7 @@ modification, are permitted provided that the following conditions are met:
     * Redistributions in binary form must reproduce the above copyright
       notice, this list of conditions and the following disclaimer in the
       documentation and/or other materials provided with the distribution.
-    * Neither the name of the ednet_core nor the
+    * Neither the name of the EDNetCore nor the
       names of its contributors may be used to endorse or promote products
       derived from this software without specific prior written permission.
 
@@ -32,17 +30,17 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
- 
- 
-library category_links_app; 
- 
-/* 
-import "dart:html"; 
-import "dart:math"; 
- 
-import "package:ednet_core/ednet_core.dart"; 
-import "package:ednet_core_default_app/ednet_core_default_app.dart"; 
- 
-import "package:category_links/category_links.dart"; 
-*/ 
- 
+
+
+  library category_links_app;
+
+  /* 
+  import "dart:flutter";
+  import "dart:math";
+  
+
+  import "package:ednet_core/ednet_core.dart";
+  import "package:ednet_core_default_app/ednet_core_default_app.dart";
+  import "package:category_links/category_links.dart";
+  */
+

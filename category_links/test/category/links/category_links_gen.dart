@@ -1,16 +1,16 @@
  
 // test/category/links/category_links_gen.dart 
- 
+import "package:ednet_core/ednet_core.dart"; 
 import "package:category_links/category_links.dart"; 
  
-genCode(CoreRepository repository) { 
+void genCode(CoreRepository repository) { 
   repository.gen("category_links"); 
 } 
  
-initData(CoreRepository repository) { 
+void initData(CoreRepository repository) { 
    var categoryDomain = repository.getDomainModels("Category"); 
-   var linksModel = categoryDomain.getModelEntries("Links"); 
-   linksModel.init(); 
+   LinksModel? linksModel = categoryDomain?.getModelEntries("Links") as LinksModel?; 
+   linksModel?.init(); 
    //linksModel.display(); 
 } 
  

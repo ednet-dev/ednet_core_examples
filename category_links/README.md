@@ -1,6 +1,6 @@
 # category_links 
 
-**Categories**: EDNetCore, class models. 
+**Categories**: ednet_core, class models. 
 
 ## Description: 
 category_links project uses 

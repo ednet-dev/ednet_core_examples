@@ -5,58 +5,46 @@ part of category_links;
 abstract class CategoryGen extends Entity<Category> { 
  
   CategoryGen(Concept concept) { 
-    this.concept = concept;
-    Concept webLinkConcept = concept.model.concepts.singleWhereCode("WebLink"); 
-    setChild("webLinks", new WebLinks(webLinkConcept)); 
-    Concept interestConcept = concept.model.concepts.singleWhereCode("Interest"); 
-    setChild("interests", new Interests(interestConcept)); 
-    Concept questionConcept = concept.model.concepts.singleWhereCode("Question"); 
-    setChild("questions", new Questions(questionConcept)); 
-  } 
- 
-  CategoryGen.withId(Concept concept, String name) {
-    this.concept = concept;
-    setAttribute("name", name); 
-    Concept webLinkConcept = concept.model.concepts.singleWhereCode("WebLink"); 
-    setChild("webLinks", new WebLinks(webLinkConcept)); 
-    Concept interestConcept = concept.model.concepts.singleWhereCode("Interest"); 
-    setChild("interests", new Interests(interestConcept)); 
-    Concept questionConcept = concept.model.concepts.singleWhereCode("Question"); 
-    setChild("questions", new Questions(questionConcept)); 
+    this.concept = concept; 
+    Concept? webLinkConcept = concept.model.concepts.singleWhereCode("WebLink"); 
+    assert(webLinkConcept!= null); 
+    setChild("webLinks", WebLinks(webLinkConcept!)); 
+    Concept? interestConcept = concept.model.concepts.singleWhereCode("Interest"); 
+    assert(interestConcept!= null); 
+    setChild("interests", Interests(interestConcept!)); 
+    Concept? questionConcept = concept.model.concepts.singleWhereCode("Question"); 
+    assert(questionConcept!= null); 
+    setChild("questions", Questions(questionConcept!)); 
   } 
  
   String get name => getAttribute("name"); 
-  set name(String a) => setAttribute("name", a); 
+  void set name(String a) { setAttribute("name", a); } 
   
   String get description => getAttribute("description"); 
-  set description(String a) => setAttribute("description", a); 
+  void set description(String a) { setAttribute("description", a); } 
   
   bool get approved => getAttribute("approved"); 
-  set approved(bool a) => setAttribute("approved", a); 
+  void set approved(bool a) { setAttribute("approved", a); } 
   
-  WebLinks get webLinks => getChild("webLinks"); 
+  WebLinks get webLinks => getChild("webLinks") as WebLinks; 
   
-  Interests get interests => getChild("interests"); 
+  Interests get interests => getChild("interests") as Interests; 
   
-  Questions get questions => getChild("questions"); 
+  Questions get questions => getChild("questions") as Questions; 
   
-  Category newEntity() => new Category(concept); 
-  Categories newEntities() => new Categories(concept); 
+  Category newEntity() => Category(concept); 
+  Categories newEntities() => Categories(concept); 
   
-  int nameCompareTo(Category other) { 
-    return name.compareTo(other.name); 
-  } 
- 
 } 
  
 abstract class CategoriesGen extends Entities<Category> { 
  
-  CategoriesGen(Concept concept) {
-    this.concept = concept;
-  }
+  CategoriesGen(Concept concept) { 
+    this.concept = concept; 
+  } 
  
-  Categories newEntities() => new Categories(concept); 
-  Category newEntity() => new Category(concept); 
+  Categories newEntities() => Categories(concept); 
+  Category newEntity() => Category(concept); 
   
 } 
  

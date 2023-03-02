@@ -299,7 +299,7 @@
             },
             {
                "sequence":30,
-               "category":"required",
+               "category":"identifier",
                "name":"createdOn",
                "type":"DateTime",
                "essential":false,
