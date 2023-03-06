@@ -365,8 +365,8 @@ testDefaultProject(Repo repo, String domainCode, String modelCode) {
       marketing.description = 'Making EDNetCore known to the Dart community.';
 
       var session = models.newSession();
-      var action = new AddAction(session, projects, marketing);
-      action.doit();
+      var action = new AddCommand(session, projects, marketing);
+      action.doIt();
       expect(projects.length, equals(++projectCount));
 
       action.undo();
@@ -384,8 +384,8 @@ testDefaultProject(Repo repo, String domainCode, String modelCode) {
       marketing.description = 'Making EDNetCore known to the Dart community.';
 
       var session = models.newSession();
-      var action = new AddAction(session, projects, marketing);
-      action.doit();
+      var action = new AddCommand(session, projects, marketing);
+      action.doIt();
       expect(projects.length, equals(++projectCount));
 
       session.past.undo();
@@ -403,9 +403,9 @@ testDefaultProject(Repo repo, String domainCode, String modelCode) {
 
       var session = models.newSession();
       var action =
-          new SetAttributeAction(session, project, 'description',
+          new SetAttributeCommand(session, project, 'description',
               'Domain Model Framework.');
-      action.doit();
+      action.doIt();
 
       session.past.undo();
       expect(project.description, equals(action.before));
@@ -413,7 +413,7 @@ testDefaultProject(Repo repo, String domainCode, String modelCode) {
       session.past.redo();
       expect(project.description, equals(action.after));
     });
-    test('Project Action with Multiple Undos and Redos ', () {
+    test('Project Command with Multiple Undos and Redos ', () {
       var projects = entries.projects;
       var projectCount = projects.length;
       var projectConcept = projects.concept;
@@ -422,15 +422,15 @@ testDefaultProject(Repo repo, String domainCode, String modelCode) {
       project1.name = 'Data modeling';
 
       var session = models.newSession();
-      var action1 = new AddAction(session, projects, project1);
-      action1.doit();
+      var action1 = new AddCommand(session, projects, project1);
+      action1.doIt();
       expect(projects.length, equals(++projectCount));
 
       var project2 = new Project(projectConcept);
       project2.name = 'Database design';
 
-      var action2 = new AddAction(session, projects, project2);
-      action2.doit();
+      var action2 = new AddCommand(session, projects, project2);
+      action2.doIt();
       expect(projects.length, equals(++projectCount));
 
       session.past.display();
@@ -463,16 +463,16 @@ testDefaultProject(Repo repo, String domainCode, String modelCode) {
 
       var project1 = new Project(projectConcept);
       project1.name = 'Data modeling';
-      var action1 = new AddAction(session, projects, project1);
+      var action1 = new AddCommand(session, projects, project1);
 
       var project2 = new Project(projectConcept);
       project2.name = 'Database design';
-      var action2 = new AddAction(session, projects, project2);
+      var action2 = new AddCommand(session, projects, project2);
 
       var transaction = new Transaction('two adds on projects', session);
       transaction.add(action1);
       transaction.add(action2);
-      transaction.doit();
+      transaction.doIt();
       projectCount = projectCount + 2;
       expect(projects.length, equals(projectCount));
 
@@ -498,23 +498,23 @@ testDefaultProject(Repo repo, String domainCode, String modelCode) {
 
       var project1 = new Project(projectConcept);
       project1.name = 'Data modeling';
-      var action1 = new AddAction(session, projects, project1);
+      var action1 = new AddCommand(session, projects, project1);
 
       var project2 = new Project(projectConcept);
       //project2.name = 'Database design';
-      var action2 = new AddAction(session, projects, project2);
+      var action2 = new AddCommand(session, projects, project2);
 
       var transaction = new Transaction(
         'two adds on projects, with an error on the second', session);
       transaction.add(action1);
       transaction.add(action2);
-      var done = transaction.doit();
+      var done = transaction.doIt();
       expect(done, isFalse);
       expect(projects.length, equals(projectCount));
 
       projects.display(title:'Transaction (with Id Error) Done');
     });
-    test('Reactions to Project Actions', () {
+    test('Reactions to Project Commands', () {
       var projects = entries.projects;
       var projectCount = projects.length;
       var projectConcept = projects.concept;
@@ -522,22 +522,22 @@ testDefaultProject(Repo repo, String domainCode, String modelCode) {
       var reaction = new ProjectReaction();
       expect(reaction, isNotNull);
 
-      models.startActionReaction(reaction);
+      models.startCommandReaction(reaction);
       var project = new Project(projectConcept);
       project.name = 'EDNetCore Documentation';
 
       var session = models.newSession();
-      var addAction = new AddAction(session, projects, project);
-      addAction.doit();
+      var addCommand = new AddCommand(session, projects, project);
+      addCommand.doIt();
       expect(projects.length, equals(++projectCount));
       expect(reaction.reactedOnAdd, isTrue);
 
       var description = 'Documenting EDNetCore.';
-      var setAttributeAction =
-          new SetAttributeAction(session, project, 'description', description);
-      setAttributeAction.doit();
+      var setAttributeCommand =
+          new SetAttributeCommand(session, project, 'description', description);
+      setAttributeCommand.doIt();
       expect(reaction.reactedOnUpdate, isTrue);
-      models.cancelActionReaction(reaction);
+      models.cancelCommandReaction(reaction);
     });
     test('Random Entity', () {
       var projects = entries.projects;
@@ -555,15 +555,15 @@ testDefaultProject(Repo repo, String domainCode, String modelCode) {
   });
 }
 
-class ProjectReaction implements ActionReactionApi {
+class ProjectReaction implements CommandReactionApi {
 
   bool reactedOnAdd = false;
   bool reactedOnUpdate = false;
 
-  react(BasicAction action) {
-    if (action is EntitiesAction) {
+  react(BasicCommand action) {
+    if (action is EntitiesCommand) {
       reactedOnAdd = true;
-    } else if (action is EntityAction) {
+    } else if (action is EntityCommand) {
       reactedOnUpdate = true;
     }
   }

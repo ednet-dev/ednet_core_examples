@@ -299,14 +299,14 @@ testCategoryQuestionLink(Repo repo, String domainCode, String modelCode) {
         print('');
       }
     });
-    test('Undo and Redo Action', () {
+    test('Undo and Redo Command', () {
       var webFrameworkCategory =
           new Category.withId(categoryConcept, 'Web Framework');
       expect(webFrameworkCategory, isNotNull);
       expect(webFrameworkCategory.webLinks.length, equals(0));
 
-      var action = new AddAction(session, categories, webFrameworkCategory);
-      action.doit();
+      var action = new AddCommand(session, categories, webFrameworkCategory);
+      action.doIt();
       expect(categories.length, equals(++categoryCount));
 
       session.past.undo();
@@ -321,18 +321,18 @@ testCategoryQuestionLink(Repo repo, String domainCode, String modelCode) {
       expect(webFrameworkCategory, isNotNull);
       expect(webFrameworkCategory.webLinks.length, equals(0));
 
-      var action1 = new AddAction(session, categories, webFrameworkCategory);
+      var action1 = new AddCommand(session, categories, webFrameworkCategory);
 
       var dbCategory = new Category.withId(categoryConcept, 'Database');
       expect(dbCategory, isNotNull);
       expect(dbCategory.webLinks.length, equals(0));
 
-      var action2 = new AddAction(session, categories, dbCategory);
+      var action2 = new AddCommand(session, categories, dbCategory);
 
       var transaction = new Transaction('two adds on categories', session);
       transaction.add(action1);
       transaction.add(action2);
-      transaction.doit();
+      transaction.doIt();
       categoryCount = categoryCount + 2;
       expect(categories.length, equals(categoryCount));
       categories.display(title:'Transaction Done');
@@ -353,19 +353,19 @@ testCategoryQuestionLink(Repo repo, String domainCode, String modelCode) {
       expect(webFrameworkCategory, isNotNull);
       expect(webFrameworkCategory.webLinks.length, equals(0));
 
-      var action1 = new AddAction(session, categories, webFrameworkCategory);
+      var action1 = new AddCommand(session, categories, webFrameworkCategory);
 
       var dbCategory = new Category.withId(categoryConcept, 'Dart');
       expect(dbCategory, isNotNull);
       expect(dbCategory.webLinks.length, equals(0));
 
-      var action2 = new AddAction(session, categories, dbCategory);
+      var action2 = new AddCommand(session, categories, dbCategory);
 
       var transaction = new Transaction(
         'two adds on categories, with an error on the second', session);
       transaction.add(action1);
       transaction.add(action2);
-      var done = transaction.doit();
+      var done = transaction.doIt();
       expect(done, isFalse);
       expect(categories.length, equals(categoryCount));
       categories.display(title:'Transaction (with Id Error) Done');
@@ -387,7 +387,7 @@ testCategoryQuestionLink(Repo repo, String domainCode, String modelCode) {
       expect(webFrameworkCategory, isNotNull);
       expect(webFrameworkCategory.webLinks.length, equals(0));
 
-      var action1 = new AddAction(session, categories, webFrameworkCategory);
+      var action1 = new AddCommand(session, categories, webFrameworkCategory);
 
       var wicketWebLink = new WebLink(webLinkConcept);
       expect(wicketWebLink, isNotNull);
@@ -403,12 +403,12 @@ testCategoryQuestionLink(Repo repo, String domainCode, String modelCode) {
       expect(webFrameworkCategory.webLinks.length, equals(0));
 
       var action2 =
-          new AddAction(session, webFrameworkCategory.webLinks, wicketWebLink);
+          new AddCommand(session, webFrameworkCategory.webLinks, wicketWebLink);
 
       var transaction = new Transaction('two adds on different concepts', session);
       transaction.add(action1);
       transaction.add(action2);
-      transaction.doit();
+      transaction.doIt();
       expect(categories.length, equals(++categoryCount));
       expect(webFrameworkCategory.webLinks.length, equals(1));
       categories.display(title:'Transaction  on Two Different Concepts Done');

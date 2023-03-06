@@ -5,14 +5,14 @@ import "package:test/test.dart";
 import "package:ednet_core/ednet_core.dart"; 
 import "package:default_project/default_project.dart"; 
 
-class ProjectReaction implements ActionReactionApi {
+class ProjectReaction implements CommandReactionApi {
   bool reactedOnAdd = false;
   bool reactedOnUpdate = false;
 
-  react(BasicAction action) {
-    if (action is EntitiesAction) {
+  react(BasicCommand action) {
+    if (action is EntitiesCommand) {
       reactedOnAdd = true;
-    } else if (action is EntityAction) {
+    } else if (action is EntityCommand) {
       reactedOnUpdate = true;
     }
   }
@@ -341,8 +341,8 @@ testDefaultProjectProject(
       expect(marketing, isNotNull);
       marketing.description = 'Making ednet_core known to the Dart community.';
 
-      var action = new AddAction(session, projects, marketing);
-      action.doit();
+      var action = new AddCommand(session, projects, marketing);
+      action.doIt();
       expect(projects.length, equals(++projectCount));
 
       action.undo();
@@ -359,8 +359,8 @@ testDefaultProjectProject(
       expect(marketing, isNotNull);
       marketing.description = 'Making ednet_core known to the Dart community.';
 
-      var action = new AddAction(session, projects, marketing);
-      action.doit();
+      var action = new AddCommand(session, projects, marketing);
+      action.doIt();
       expect(projects.length, equals(++projectCount));
 
       session.past.undo();
@@ -377,9 +377,9 @@ testDefaultProjectProject(
       expect(project, isNotNull);
       expect(project.name, equals(randomName));
 
-      var action = new SetAttributeAction(session, project, 'description',
+      var action = new SetAttributeCommand(session, project, 'description',
           'Domain Model Framework.');
-      action.doit();
+      action.doIt();
 
       session.past.undo();
       expect(project.description, equals(action.before));
@@ -395,15 +395,15 @@ testDefaultProjectProject(
       var project1 = new Project(projectConcept);
       project1.name = 'Data modeling';
 
-      var action1 = new AddAction(session, projects, project1);
-      action1.doit();
+      var action1 = new AddCommand(session, projects, project1);
+      action1.doIt();
       expect(projects.length, equals(++projectCount));
 
       var project2 = new Project(projectConcept);
       project2.name = 'Database design';
 
-      var action2 = new AddAction(session, projects, project2);
-      action2.doit();
+      var action2 = new AddCommand(session, projects, project2);
+      action2.doIt();
       expect(projects.length, equals(++projectCount));
 
       //session.past.display();
@@ -431,16 +431,16 @@ testDefaultProjectProject(
 
       var project1 = new Project(projectConcept);
       project1.name = 'Data modeling';
-      var action1 = new AddAction(session, projects, project1);
+      var action1 = new AddCommand(session, projects, project1);
 
       var project2 = new Project(projectConcept);
       project2.name = 'Database design';
-      var action2 = new AddAction(session, projects, project2);
+      var action2 = new AddCommand(session, projects, project2);
 
       var transaction = new Transaction('two adds on projects', session);
       transaction.add(action1);
       transaction.add(action2);
-      transaction.doit();
+      transaction.doIt();
       projectCount = projectCount + 2;
       expect(projects.length, equals(projectCount));
 
@@ -465,17 +465,17 @@ testDefaultProjectProject(
 
       var project1 = new Project(projectConcept);
       project1.name = 'Data modeling';
-      var action1 = new AddAction(session, projects, project1);
+      var action1 = new AddCommand(session, projects, project1);
 
       var project2 = new Project(projectConcept);
       //project2.name = 'Database design';
-      var action2 = new AddAction(session, projects, project2);
+      var action2 = new AddCommand(session, projects, project2);
 
       var transaction = new Transaction(
         'two adds on projects, with an error on the second', session);
       transaction.add(action1);
       transaction.add(action2);
-      var done = transaction.doit();
+      var done = transaction.doIt();
       expect(done, isFalse);
       expect(projects.length, equals(projectCount));
 
@@ -489,22 +489,22 @@ testDefaultProjectProject(
       var reaction = new ProjectReaction();
       expect(reaction, isNotNull);
 
-      domain.startActionReaction(reaction);
+      domain.startCommandReaction(reaction);
       var project = new Project(projectConcept);
       project.name = 'ednet_core Documentation';
 
       var session = domain.newSession();
-      var addAction = new AddAction(session, projects, project);
-      addAction.doit();
+      var addCommand = new AddCommand(session, projects, project);
+      addCommand.doIt();
       expect(projects.length, equals(++projectCount));
       expect(reaction.reactedOnAdd, isTrue);
 
       var description = 'Documenting ednet_core.';
-      var setAttributeAction =
-          new SetAttributeAction(session, project, 'description', description);
-      setAttributeAction.doit();
+      var setAttributeCommand =
+          new SetAttributeCommand(session, project, 'description', description);
+      setAttributeCommand.doIt();
       expect(reaction.reactedOnUpdate, isTrue);
-      domain.cancelActionReaction(reaction);
+      domain.cancelCommandReaction(reaction);
     });
     
   }); 
