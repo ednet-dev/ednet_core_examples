@@ -8,52 +8,52 @@ part of category_keyword;
 var categoryKeywordModelJson = r'''
 {
    "width":990,
-   "lines":[
+   "relations":[
       {
-         "box2box1Min":"0",
-         "box1Name":"Category",
-         "box1box2Min":"0",
-         "box2Name":"Category",
+         "toFromMin":"0",
+         "from":"Category",
+         "fromToMin":"0",
+         "to":"Category",
          "category":"reflexive",
-         "box2box1Id":false,
-         "box2box1Name":"category",
-         "box1box2Id":false,
-         "box1box2Name":"categories",
-         "box1box2Max":"N",
+         "toFromId":false,
+         "toFromName":"category",
+         "fromToId":false,
+         "fromToName":"categories",
+         "fromToMax":"N",
          "internal":true,
-         "box2box1Max":"1"
+         "toFromMax":"1"
       },
       {
-         "box2box1Min":"1",
-         "box1Name":"Keyword",
-         "box1box2Min":"0",
-         "box2Name":"Tag",
+         "toFromMin":"1",
+         "from":"Keyword",
+         "fromToMin":"0",
+         "to":"Tag",
          "category":"relationship",
-         "box2box1Id":true,
-         "box2box1Name":"keyword",
-         "box1box2Id":false,
-         "box1box2Name":"tags",
-         "box1box2Max":"N",
+         "toFromId":true,
+         "toFromName":"keyword",
+         "fromToId":false,
+         "fromToName":"tags",
+         "fromToMax":"N",
          "internal":true,
-         "box2box1Max":"1"
+         "toFromMax":"1"
       },
       {
-         "box2box1Min":"1",
-         "box1Name":"Category",
-         "box1box2Min":"0",
-         "box2Name":"Tag",
+         "toFromMin":"1",
+         "from":"Category",
+         "fromToMin":"0",
+         "to":"Tag",
          "category":"relationship",
-         "box2box1Id":true,
-         "box2box1Name":"category",
-         "box1box2Id":false,
-         "box1box2Name":"tags",
-         "box1box2Max":"N",
+         "toFromId":true,
+         "toFromName":"category",
+         "fromToId":false,
+         "fromToName":"tags",
+         "fromToMax":"N",
          "internal":false,
-         "box2box1Max":"1"
+         "toFromMax":"1"
       }
    ],
    "height":580,
-   "boxes":[
+   "concepts":[
       {
          "entry":true,
          "name":"Category",
@@ -61,7 +61,7 @@ var categoryKeywordModelJson = r'''
          "y":153,
          "width":80,
          "height":80,
-         "items":[
+         "attributes":[
             {
                "sequence":10,
                "category":"required",
@@ -89,7 +89,7 @@ var categoryKeywordModelJson = r'''
          "y":201,
          "width":80,
          "height":80,
-         "items":[
+         "attributes":[
             {
                "sequence":10,
                "category":"identifier",
@@ -108,7 +108,7 @@ var categoryKeywordModelJson = r'''
          "y":378,
          "width":80,
          "height":80,
-         "items":[
+         "attributes":[
 
          ]
       }
